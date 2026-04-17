@@ -1,0 +1,20 @@
+{
+  "name": "pathway",
+  "version": "1.0.0",
+  "description": "Pathway Design System — Claude Code skills for Amplify designers: Figma-component readiness audits, spec authoring, spec review, and full repo-to-Storybook pipeline.",
+  "author": {
+    "name": "Jo Lopez",
+    "email": "jo.lopez@ministrybrands.com"
+  },
+  "homepage": "https://github.com/helloimjolopez-collab/pathway-claude-skills",
+  "repository": "https://github.com/helloimjolopez-collab/pathway-claude-skills",
+  "license": "UNLICENSED",
+  "keywords": [
+    "pathway",
+    "design-system",
+    "amplify",
+    "figma",
+    "storybook",
+    "components"
+  ]
+}
