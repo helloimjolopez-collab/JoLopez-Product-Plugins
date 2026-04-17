@@ -1,12 +1,12 @@
-# Product Bible - Page Template
+# Knowledgebase - Page Template
 
-This template is for the **child Confluence page** for a product. In Confluence it is named "[Product Name] Product Bible" and lives nested inside the parent "[Product Name] Snapshot" page. See `references/cover-page-template.md` for the Snapshot template.
+This template is for the **child Confluence page** for a product. In Confluence it is named "[Product Name] Knowledgebase" and lives nested inside the parent "[Product Name] Knowledge Base Overview" page. See `references/cover-page-template.md` for the Knowledge Base Overview template.
 
-The Snapshot holds everything operational and business: team, stakeholders, initiatives, discovery backlog, KB integrity, integrations, business context, environments. The Product Bible holds the technical and product-internal depth: architecture, features, user flows, current challenges, personas, terminology, and risks.
+The Knowledge Base Overview holds everything operational and business: team, stakeholders, initiatives, discovery backlog, KB integrity, integrations, business context, environments. The Knowledgebase holds the technical and product-internal depth: architecture, features, user flows, current challenges, personas, terminology, and risks.
 
-The two pages must not duplicate each other. If a topic that lives on the Snapshot is relevant for context inside the Product Bible, link to the Snapshot rather than copying content.
+The two pages must not duplicate each other. If a topic that lives on the Knowledge Base Overview is relevant for context inside the Knowledgebase, link to the Knowledge Base Overview rather than copying content.
 
-The Product Bible should be thorough enough that a new team member can read it cold and understand how the product actually works.
+The Knowledgebase should be thorough enough that a new team member can read it cold and understand how the product actually works.
 
 Writing style: no em dashes. Use periods, commas, colons, or parentheses. Hyphens between single words (for example "data-informed") are fine. No formulaic contrast phrasing. Keep prose plain and direct.
 
@@ -15,13 +15,13 @@ Writing style: no em dashes. Use periods, commas, colons, or parentheses. Hyphen
 ## Template Structure
 
 ```markdown
-# [Product Name] Product Bible
+# [Product Name] Knowledgebase
 
 ---
 
 ## Human Review Status
 
-This block tracks whether a human has done a full end-to-end review of this document. AI-generated and AI-assisted knowledgebases can look polished without actually being correct; a human has to read the whole thing before it can be trusted as authoritative. This is distinct from the KB Integrity table on the Snapshot: KB Integrity tracks specific unresolved gaps, this tracks whether a person has actually sat down and read the document end to end.
+This block tracks whether a human has done a full end-to-end review of this document. AI-generated and AI-assisted knowledgebases can look polished without actually being correct; a human has to read the whole thing before it can be trusted as authoritative. This is distinct from the KB Integrity table on the Knowledge Base Overview: KB Integrity tracks specific unresolved gaps, this tracks whether a person has actually sat down and read the document end to end.
 
 | | |
 |---|---|
@@ -68,7 +68,7 @@ If "Fully reviewed" is No, every consumer of this document should treat it as a 
 
 ### Embedded / Integration Architecture
 
-[If the product integrates with host systems, describe: how the embedding works, what data flows where, what is shared vs independent. For the full list of integration partners and backend vendors, see the Snapshot page.]
+[If the product integrates with host systems, describe: how the embedding works, what data flows where, what is shared vs independent. For the full list of integration partners and backend vendors, see the Knowledge Base Overview page.]
 
 ---
 
@@ -100,7 +100,7 @@ This section is the feature inventory. For step-by-step user paths, see Section 
 
 This section is primarily for machine consumption, not human reading. Humans looking at user flows should open the linked flow artifact directly (Figma flow, Lucid chart, interactive HTML flow map). This section exists so an LLM, auditor, or automated process can compare the live product against documented flows without needing to interpret a visual artifact.
 
-**Every flow in this section must include a link to the actual flow artifact in the subheader table.** A text-only description is not sufficient. If a flow has no artifact link, flag it in the Snapshot KB Integrity table with Status "Not Started" so someone creates one.
+**Every flow in this section must include a link to the actual flow artifact in the subheader table.** A text-only description is not sufficient. If a flow has no artifact link, flag it in the Knowledge Base Overview KB Integrity table with Status "Not Started" so someone creates one.
 
 ### Flow 1: [Flow Name]
 
@@ -184,7 +184,7 @@ If personas were built using the MB Persona Maker skill, link to the full person
 
 ### Persona Data Gaps
 
-[Any persona attributes based on assumptions rather than validated data. These should also appear as rows in the Snapshot KB Integrity table with Status values so they roll up into the document's trust layer.]
+[Any persona attributes based on assumptions rather than validated data. These should also appear as rows in the Knowledge Base Overview KB Integrity table with Status values so they roll up into the document's trust layer.]
 
 ---
 
@@ -226,7 +226,7 @@ Categories to consider:
 - Tables for structured data. Prose for context and narrative.
 - Section 4 Core User Flows **must** include a link to the flow artifact per flow. Text-only is not acceptable. The text steps are for machine comparison, the artifact link is for humans.
 - Section 6 Personas: a short summary is fine. The full persona doc lives wherever the Persona Maker skill placed it, linked from this section.
-- Do **not** include Last Updated, Last Audited, or Owned by here. Confluence tracks edit history natively. The Human Review Status block at the top of the Product Bible is the one exception, because "has a human actually read this" is not something Confluence tracks.
-- Do **not** duplicate content that lives on the Snapshot. If you find yourself writing about Team & Stakeholders, Initiatives, Discovery, KB Integrity, Integrations, or Business Context, stop and put it on the Snapshot instead.
+- Do **not** include Last Updated, Last Audited, or Owned by here. Confluence tracks edit history natively. The Human Review Status block at the top of the Knowledgebase is the one exception, because "has a human actually read this" is not something Confluence tracks.
+- Do **not** duplicate content that lives on the Knowledge Base Overview. If you find yourself writing about Team & Stakeholders, Initiatives, Discovery, KB Integrity, Integrations, or Business Context, stop and put it on the Knowledge Base Overview instead.
 - No em dashes anywhere. Use periods, commas, colons, or parentheses. Hyphens between single words are fine.
 - The document should be thorough enough that a new team member can read it cold and understand the product.

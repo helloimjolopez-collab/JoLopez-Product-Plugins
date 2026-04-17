@@ -68,11 +68,11 @@ Flag every unvalidated claim internally. Don't announce each flag - just keep th
 
 23. What's the production URL?
 24. Is there a staging or test environment? URL?
-25. **Platform URL for audits (REQUIRED, non-optional):** What single URL should any future human or machine auditor use to explore this product? This becomes the Snapshot's Platform URL field. If the user cannot provide this, block KB generation and explain why: without a Platform URL, no future audit (human or automated) can compare the KB to the live product. If the user names multiple candidate URLs (e.g., an admin view and a user view), ask them to pick the one that should be the canonical reference environment.
+25. **Platform URL for audits (REQUIRED, non-optional):** What single URL should any future human or machine auditor use to explore this product? This becomes the Knowledge Base Overview's Platform URL field. If the user cannot provide this, block KB generation and explain why: without a Platform URL, no future audit (human or automated) can compare the KB to the live product. If the user names multiple candidate URLs (e.g., an admin view and a user view), ask them to pick the one that should be the canonical reference environment.
 26. Can you give me credentials to access the test environment so I can explore it? (email + password)
 27. Any other environment links? (admin panels, internal tools, API playgrounds)
-28. Are there Figma files for current designs or the design system? Links? (Goes into the Snapshot Product Overview: Figma Links.)
-28a. **Pendo Dashboard link?** Even if usage is limited, capture the product's Pendo space or dashboard URL. (Goes into the Snapshot Product Overview: Pendo Dashboard.)
+28. Are there Figma files for current designs or the design system? Links? (Goes into the Knowledge Base Overview Product Overview: Figma Links.)
+28a. **Pendo Dashboard link?** Even if usage is limited, capture the product's Pendo space or dashboard URL. (Goes into the Knowledge Base Overview Product Overview: Pendo Dashboard.)
 29. Where does the team track work? (Jira, Linear, Asana, Productboard, etc.) Can I get a link?
 30. Is there a UX backlog or product backlog I should look at? Link?
 31. Any existing documentation I should read first? (PRDs, specs, wiki pages, architecture docs)
@@ -101,7 +101,7 @@ Flag every unvalidated claim internally. Don't announce each flag - just keep th
 
 41. What are the core user flows, the 3 to 5 things users do most often?
     - Walk me through each one at a high level.
-    - **For each flow, ask: is there an existing artifact (Figma flow page, Lucid chart, interactive HTML flow map, or similar)?** Capture the link per flow. These links are required on the Snapshot Product Overview ("Core User Flows (links)") and on each flow's subheader table in Product Bible Section 4.
+    - **For each flow, ask: is there an existing artifact (Figma flow page, Lucid chart, interactive HTML flow map, or similar)?** Capture the link per flow. These links are required on the Knowledge Base Overview Product Overview ("Core User Flows (links)") and on each flow's subheader table in Knowledgebase Section 4.
     - **If a flow has no artifact yet**, flag it as a KB Integrity row: "Flow [name] has no artifact link" with Status "Not Started" and a proposed Who and When.
     - *Validation probe:* "When you say these are the flows users do most, is that from Pendo analytics showing the top flows, or from your understanding of the product? Both are useful, I just want to note the source."
 42. How is the product organized? (what's in the sidebar/nav, how do users get around)
@@ -120,7 +120,7 @@ Flag every unvalidated claim internally. Don't announce each flag - just keep th
 
 ## 9. Product Initiatives (In Progress, Planned, Recently Complete)
 
-All three tables live on the Snapshot. Each initiative lives in exactly one based on its current state. Capture name, short description, linked docs (PRD, PIO, brief), and a status value from the allowed list for its table.
+All three tables live on the Knowledge Base Overview. Each initiative lives in exactly one based on its current state. Capture name, short description, linked docs (PRD, PIO, brief), and a status value from the allowed list for its table.
 
 50. **In Progress.** What initiatives are actively being built right now? For each, capture:
     - Name
@@ -142,7 +142,7 @@ All three tables live on the Snapshot. Each initiative lives in exactly one base
 
 ## 10. Discovery Backlog
 
-All discovery items live on the Snapshot Discovery Backlog table. One table, one row per item.
+All discovery items live on the Knowledge Base Overview Discovery Backlog table. One table, one row per item.
 
 53. For each item in discovery or waiting for discovery, capture:
     - Name
@@ -152,16 +152,16 @@ All discovery items live on the Snapshot Discovery Backlog table. One table, one
 
 54. Are there any known upcoming asks from stakeholders, customers, or sales that should be in Discovery but are not yet captured?
 
-55. What are the current challenges or blockers the team is facing? (These may be candidates for Known Risks & Dependencies in the Product Bible Section 8, or KB Integrity rows on the Snapshot.)
+55. What are the current challenges or blockers the team is facing? (These may be candidates for Known Risks & Dependencies in the Knowledgebase Section 8, or KB Integrity rows on the Knowledge Base Overview.)
 
 ## 11. Personas
 
 57. Do you have existing user personas for this product? Where are they documented?
 58. Are the existing personas still accurate, or have things shifted?
-59. **Main Personas (for the Snapshot Product Overview "Main Personas" row):** Even before building full personas, give me the short list: name and one-line role per primary, secondary, and tertiary persona. Example: "Sarah, Volunteer Coordinator (primary); Pastor Mike, Campus Pastor (secondary)". This goes into the Snapshot Product Overview table. Full per-persona detail goes into Product Bible Section 6 (Personas) or a separate persona doc built with the Persona Maker skill.
+59. **Main Personas (for the Knowledge Base Overview Product Overview "Main Personas" row):** Even before building full personas, give me the short list: name and one-line role per primary, secondary, and tertiary persona. Example: "Sarah, Volunteer Coordinator (primary); Pastor Mike, Campus Pastor (secondary)". This goes into the Knowledge Base Overview Product Overview table. Full per-persona detail goes into Knowledgebase Section 6 (Personas) or a separate persona doc built with the Persona Maker skill.
 60. If no full personas exist: would you like to build them now as part of this process, or later?
     - If now: transition to the MB Persona Maker skill (see below).
-    - If later: note this as a KB Integrity row on the Snapshot.
+    - If later: note this as a KB Integrity row on the Knowledge Base Overview.
 
 **If the user wants to build personas:** Tell them about the MB Persona Maker skill. It's a companion skill that guides a deep persona creation process - interviewing for user types, goals, frustrations, workflows, and critically, identifying data gaps and giving them a full validation guide for gathering the research they need. The persona output integrates directly into this knowledgebase.
 

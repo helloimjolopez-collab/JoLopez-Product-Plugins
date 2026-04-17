@@ -1,10 +1,10 @@
-# Product Snapshot - Page Template
+# Product Knowledge Base Overview - Page Template
 
-This template is for the **parent Confluence page** for a product. In Confluence it is named "[Product Name] Snapshot" (for example, "Horizon Snapshot" or "Protect My Ministry Snapshot"). It is the single scannable dashboard for everything operational and business about the product.
+This template is for the **parent Confluence page** for a product. In Confluence it is named "[Product Name] Knowledge Base Overview" (for example, "Horizon Knowledge Base Overview" or "Protect My Ministry Knowledge Base Overview"). It is the single scannable dashboard for everything operational and business about the product.
 
-The deep technical reference lives as a child page nested under this one, called "[Product Name] Product Bible". See `references/kb-template.md`.
+The deep technical reference lives as a child page nested under this one, called "[Product Name] Knowledgebase". See `references/kb-template.md`.
 
-The Snapshot should be scannable in about 60 seconds. A VP, a new team member, or a cross-functional partner should be able to glance at it and understand: what is this product, who owns it, what are we working on, what is in the pipeline, and what is currently incomplete or unvalidated about this document.
+The Knowledge Base Overview should be scannable in about 60 seconds. A VP, a new team member, or a cross-functional partner should be able to glance at it and understand: what is this product, who owns it, what are we working on, what is in the pipeline, and what is currently incomplete or unvalidated about this document.
 
 Writing style: no em dashes. Use periods, commas, colons, or parentheses. Hyphens between single words (for example "data-informed") are fine. No formulaic contrast phrasing. Keep prose plain and direct.
 
@@ -14,17 +14,18 @@ Writing style: no em dashes. Use periods, commas, colons, or parentheses. Hyphen
 
 Ministry Brands has a standard Confluence template for product knowledgebases. Use it. Do not invent your own page structure.
 
-**Template URL:** https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Knowledge+Base+Template
+**Template URL:** https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview
 
-This template lives in the DesignOps space. If the user cannot access it, tell them to request access from the design team (Slack them or file a Confluence access request). Do not proceed by making up a different page structure.
+This template lives in the MB Design Ops space. If the user cannot access it, tell them to request access from the design team (Slack them or file a Confluence access request). Do not proceed by making up a different page structure.
 
 Saving process (tell the user to do these steps):
 
-1. From the template page above, create a new parent page named "[Product Name] Snapshot".
-2. Under that parent, create a nested child page named "[Product Name] Product Bible".
-3. Copy the full Snapshot markdown output and paste it into the Snapshot page.
-4. Copy the full Product Bible markdown output and paste it into the Product Bible page.
-5. Spot-check that tables and headings rendered correctly on paste.
+1. Open the template URL above and **duplicate** it into the user's own Confluence space.
+2. Rename the duplicated parent page to "[Product Name] Knowledge Base Overview".
+3. Rename the nested child page to "[Product Name] Knowledgebase".
+4. Copy the full Knowledge Base Overview markdown output and paste it into the "[Product Name] Knowledge Base Overview" page.
+5. Copy the full Knowledgebase markdown output and paste it into the "[Product Name] Knowledgebase" child page.
+6. Spot-check that tables and headings rendered correctly on paste.
 
 Updating going forward: always run updates through the **MB Product Knowledgebase Assistant** skill, not by hand-editing Confluence. The Assistant produces updated markdown that preserves the template format for clean re-paste.
 
@@ -33,7 +34,7 @@ Updating going forward: always run updates through the **MB Product Knowledgebas
 ## Template Structure
 
 ```markdown
-# [Product Name] Snapshot
+# [Product Name] Knowledge Base Overview
 
 ---
 
@@ -59,7 +60,7 @@ Updating going forward: always run updates through the **MB Product Knowledgebas
 | **Pendo Dashboard (link)** | [Direct link to the product's Pendo dashboard or space] |
 | **Figma Links** | [Direct link to Figma project] |
 | **Other Relevant Resources** | [Design system, API docs, any other reference links. One per line or comma separated.] |
-| **Main Personas** | [Short list of the primary and secondary personas for this product, names and one-line role each. No deep detail here. Example: "Sarah, Volunteer Coordinator (primary); Pastor Mike, Campus Pastor (secondary); Admin Andy, IT Contact (tertiary)". Full persona detail lives in Product Bible Section 6.] |
+| **Main Personas** | [Short list of the primary and secondary personas for this product, names and one-line role each. No deep detail here. Example: "Sarah, Volunteer Coordinator (primary); Pastor Mike, Campus Pastor (secondary); Admin Andy, IT Contact (tertiary)". Full persona detail lives in Knowledgebase Section 6.] |
 | **Status** | [Current lifecycle status. Example: "Live, Active Development", "Live, Maintenance", "Beta", "Sunset"] |
 
 ### Key Stakeholders
@@ -188,7 +189,7 @@ Valid Status values (discovery lifecycle, roughly in order):
 
 ## KB Integrity
 
-This table is the single source of truth for everything incomplete, unvalidated, flagged, or needing a human decision in this KB (both the Snapshot and the Product Bible). Every row must have all columns filled in. Treat each row as a to-do that affects how much a reader can trust this document.
+This table is the single source of truth for everything incomplete, unvalidated, flagged, or needing a human decision in this KB (both the Knowledge Base Overview and the Knowledgebase). Every row must have all columns filled in. Treat each row as a to-do that affects how much a reader can trust this document.
 
 The KB Assistant skill uses this table as the trust layer for any task the user brings. If a user is about to prototype, plan, or make a decision that touches one of these rows, the assistant flags it before the user acts.
 
@@ -207,7 +208,7 @@ Valid Status values:
 
 ---
 
-## Style Notes for the Snapshot
+## Style Notes for the Knowledge Base Overview
 
 - This is a dashboard. Keep everything concise. One-liners, not paragraphs.
 - Use tables (not bulleted lists) for Product Initiatives, Discovery Backlog, KB Integrity, Integrations, and Key Stakeholders.
@@ -219,4 +220,4 @@ Valid Status values:
 - If a field is unknown, write "TBD" rather than leaving blank. Platform URL is the one exception where TBD is not acceptable.
 - Do NOT add Last Updated, Last Audited, or Owned by fields. Confluence tracks edit history natively.
 - No em dashes anywhere. Use periods, commas, colons, or parentheses. Hyphens between single words are fine.
-- Link to the child page at the top or bottom: "For the full technical reference, see: [Product Name] Product Bible".
+- Link to the child page at the top or bottom: "For the full technical reference, see: [Product Name] Knowledgebase".

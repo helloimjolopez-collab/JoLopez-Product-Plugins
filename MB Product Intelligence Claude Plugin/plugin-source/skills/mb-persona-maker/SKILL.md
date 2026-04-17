@@ -42,19 +42,19 @@ Before starting, be upfront:
 
 ### If Starting from a Knowledge Base
 
-Read both pages of the KB: the **Snapshot** (parent page, named "[Product Name] Snapshot") and the **Product Bible** (child page, named "[Product Name] Product Bible"). Extract:
+Read both pages of the KB: the **Knowledge Base Overview** (parent page, named "[Product Name] Knowledge Base Overview") and the **Knowledgebase** (child page, named "[Product Name] Knowledgebase"). Extract:
 
-- **Product name and what it does** - Snapshot Product Overview table; Product Bible Section 1 (Product Overview).
-- **Primary and secondary users mentioned** - Product Bible Section 3 (Features & Functionality) and Section 4 (Core User Flows).
-- **Core user flows** (which users do which flows) - Product Bible Section 4. Each flow has an artifact link in its subheader table. Open those artifacts for the richest context.
-- **Challenges that affect specific user types** - Product Bible Section 5 (Current Challenges).
-- **Terminology that hints at user segments** - Product Bible Section 7 (Terminology & Mental Models).
-- **Team and Stakeholders** - Snapshot Product Overview and Snapshot Key Stakeholders sub-table (useful for knowing who to interview during persona validation). There is no dedicated Team section in the Product Bible anymore.
-- **Known Risks & Dependencies** - Product Bible Section 8 (some may be persona-specific pain points, e.g., compliance burden falling on specific personas, vendor concentration affecting specific user types).
-- **Open Validation items** - Snapshot **KB Integrity** table (columns: Item / What's Missing / Why It Matters / How to Validate / Who / When / Status). Many rows will already be persona-related. Note which ones are "Not Started" vs "In Progress" vs "Validated" so you know what context is trustworthy.
-- **Business Context** - Snapshot Business Context table (customer count, revenue, pricing, competitors, TAM). Useful for sizing persona segments.
-- **Integrations** - Snapshot Integrations & Third Parties (host systems, product integrations, backend vendors). Useful for understanding which personas touch which integration points.
-- **Human Review Status** - Product Bible top block. If "Fully reviewed" is No or review is stale, treat the Product Bible content as draft and flag it to the user before building personas on top of it.
+- **Product name and what it does** - Knowledge Base Overview Product Overview table; Knowledgebase Section 1 (Product Overview).
+- **Primary and secondary users mentioned** - Knowledgebase Section 3 (Features & Functionality) and Section 4 (Core User Flows).
+- **Core user flows** (which users do which flows) - Knowledgebase Section 4. Each flow has an artifact link in its subheader table. Open those artifacts for the richest context.
+- **Challenges that affect specific user types** - Knowledgebase Section 5 (Current Challenges).
+- **Terminology that hints at user segments** - Knowledgebase Section 7 (Terminology & Mental Models).
+- **Team and Stakeholders** - Knowledge Base Overview Product Overview and Knowledge Base Overview Key Stakeholders sub-table (useful for knowing who to interview during persona validation). There is no dedicated Team section in the Knowledgebase anymore.
+- **Known Risks & Dependencies** - Knowledgebase Section 8 (some may be persona-specific pain points, e.g., compliance burden falling on specific personas, vendor concentration affecting specific user types).
+- **Open Validation items** - Knowledge Base Overview **KB Integrity** table (columns: Item / What's Missing / Why It Matters / How to Validate / Who / When / Status). Many rows will already be persona-related. Note which ones are "Not Started" vs "In Progress" vs "Validated" so you know what context is trustworthy.
+- **Business Context** - Knowledge Base Overview Business Context table (customer count, revenue, pricing, competitors, TAM). Useful for sizing persona segments.
+- **Integrations** - Knowledge Base Overview Integrations & Third Parties (host systems, product integrations, backend vendors). Useful for understanding which personas touch which integration points.
+- **Human Review Status** - Knowledgebase top block. If "Fully reviewed" is No or review is stale, treat the Knowledgebase content as draft and flag it to the user before building personas on top of it.
 
 Then present your initial read to the user: "Based on your knowledgebase, it looks like you have [N] distinct user types: [list them]. Does that sound right, or are there others I'm missing?"
 
@@ -206,46 +206,46 @@ After producing the Data Validation Guide, integrate the persona work back into 
 
 ### Where Personas Live in the KB
 
-Ministry Brands product KBs live in Confluence, using the DesignOps template:
+Ministry Brands product KBs live in Confluence, using the MB Design Ops template:
 
-**Template URL:** https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Knowledge+Base+Template
+**Template URL:** https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview
 
 Personas land in two specific places in that template:
 
-1. **Snapshot Product Overview, "Main Personas" row.** A short list: persona name and one-line role per persona. No deep detail. Example: "Sarah, Volunteer Coordinator (primary); Pastor Mike, Campus Pastor (secondary)".
-2. **Product Bible Section 6 (Personas).** Full per-persona detail: summary blocks and links to the full persona documents (which can live as their own child pages, or inline).
+1. **Knowledge Base Overview Product Overview, "Main Personas" row.** A short list: persona name and one-line role per persona. No deep detail. Example: "Sarah, Volunteer Coordinator (primary); Pastor Mike, Campus Pastor (secondary)".
+2. **Knowledgebase Section 6 (Personas).** Full per-persona detail: summary blocks and links to the full persona documents (which can live as their own child pages, or inline).
 
 ### How to Integrate Personas into an Existing KB
 
 Tell the user:
 
-> "Your personas and data validation guide are ready. To merge them into your product's KB in Confluence, hand everything to the **MB Product Knowledgebase Assistant** skill. Say something like: 'Add these personas to this KB. Update Main Personas on the Snapshot and fill in Product Bible Section 6.'
+> "Your personas and data validation guide are ready. To merge them into your product's KB in Confluence, hand everything to the **MB Product Knowledgebase Assistant** skill. Say something like: 'Add these personas to this KB. Update Main Personas on the Knowledge Base Overview and fill in Knowledgebase Section 6.'
 >
 > Give the Assistant:
 > 1. The persona document(s) I just produced.
-> 2. Your current Snapshot markdown (or paste the Confluence URL of the Snapshot page).
-> 3. Your current Product Bible markdown (or link).
-> 4. The Data Validation Guide, so any persona-specific validation gaps can be added as rows in the Snapshot KB Integrity table.
+> 2. Your current Knowledge Base Overview markdown (or paste the Confluence URL of the Knowledge Base Overview page).
+> 3. Your current Knowledgebase markdown (or link).
+> 4. The Data Validation Guide, so any persona-specific validation gaps can be added as rows in the Knowledge Base Overview KB Integrity table.
 >
-> The Assistant will give you back updated Snapshot and Product Bible markdown ready to paste over your existing Confluence pages. The template format stays intact."
+> The Assistant will give you back updated Knowledge Base Overview and Knowledgebase markdown ready to paste over your existing Confluence pages. The template format stays intact."
 
 ### If the User Has No KB Yet
 
 If the user has not yet created a product KB, tell them:
 
-> "Before adding these personas, you need a product KB for this product. Use the **MB Product Knowledgebase Maker** skill to create one, then save it to Confluence using the DesignOps template at https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Knowledge+Base+Template. Once the KB exists, come back and use the KB Assistant to merge these personas in."
+> "Before adding these personas, you need a product KB for this product. Use the **MB Product Knowledgebase Maker** skill to create one, then save it to Confluence using the MB Design Ops template at https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview. Once the KB exists, come back and use the KB Assistant to merge these personas in."
 
 ### Persona-Specific KB Integrity Rows
 
-For every gap the persona gap analysis surfaced (Phase 3), the corresponding KB Integrity row on the Snapshot should use the full seven-column format:
+For every gap the persona gap analysis surfaced (Phase 3), the corresponding KB Integrity row on the Knowledge Base Overview should use the full seven-column format:
 
 **Item / What's Missing, Assumed, or Incomplete / Why It Matters / How to Validate / Who / When / Status**
 
 Tag the Item to show it originated here (e.g., "Persona: Sarah, assumed tech comfort 3/5"). Set Status to "Not Started" for new rows.
 
-This keeps the Snapshot KB Integrity table as the single source of truth for every open question about the product, including persona assumptions. A standalone persona validation guide that lives only in a persona doc drifts. One that also lives in the KB's trust layer doesn't.
+This keeps the Knowledge Base Overview KB Integrity table as the single source of truth for every open question about the product, including persona assumptions. A standalone persona validation guide that lives only in a persona doc drifts. One that also lives in the KB's trust layer doesn't.
 
-If no KB exists yet, note in the Data Validation Guide output that these items should be migrated into a Snapshot KB Integrity table once the KB is created.
+If no KB exists yet, note in the Data Validation Guide output that these items should be migrated into a Knowledge Base Overview KB Integrity table once the KB is created.
 
 When merging, use the KB's column structure: **Item / What's Missing, Assumed, or Incomplete / Why It Matters / How to Validate / Who / When**. Add a tag or note on each merged row to indicate the item originated from persona work (e.g., "Source: Persona Maker - [Persona Name]"). This keeps the KB as the single source of truth for open validation items and prevents drift between a standalone persona validation guide and the KB's registry.
 
