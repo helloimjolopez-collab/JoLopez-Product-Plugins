@@ -1,6 +1,6 @@
 ---
 name: mb-product-knowledgebase-maker
-description: "Builds a complete product knowledgebase from a guided interview plus a hands-on walkthrough of the live product. Use this any time someone wants to: create a product knowledgebase, write product docs for Confluence or a wiki, map user flows from a live product, run a product audit, build a product context document, onboard someone to a product, or capture what the team already knows. Triggers on: knowledgebase, knowledge base, product documentation, product wiki, product audit, product flows, product analysis, Confluence page, product onboarding doc. Built for Ministry Brands. Works for any SaaS product."
+description: "Builds a complete product knowledgebase from a guided interview plus a hands-on walkthrough of the live product. Produces two paste-ready markdown documents (a Knowledge Base Overview dashboard and a deep Knowledgebase reference) plus interactive user flow maps. Use this any time someone wants to create product documentation, a product wiki, a product audit, or an onboarding doc. Built for Ministry Brands. Works for any SaaS product."
 ---
 
 # MB Product Knowledgebase Maker
@@ -15,13 +15,15 @@ Both markdown documents must be formatted so the user can copy them directly and
 
 This process involves a deep one-on-one conversation with a product owner or product manager, followed by hands-on exploration of the product's live environment.
 
-## Writing Style Rules (apply at all times, to every output)
+## Working Principles (apply at all times, to every output)
 
-1. Never use em dashes (the long horizontal dash, Unicode U+2014, often rendered as one wide line connecting two clauses) in any output. Use commas, periods, colons, or parentheses instead. Hyphens between single words (for example "data-informed") are fine.
-2. Never use formulaic contrast phrasing such as "it's not X, it's Y", "not just X, but Y", or similar rhetorical flourishes.
-3. Avoid unnecessary flourish, overwriting, or filler language. Say what you mean directly.
-4. Keep prose clear, plain, and useful.
-5. These rules apply across every project, chat, and Cowork tab and must persist even if this skill is customized from another context.
+These rules persist across every session, every project, every chat, every Cowork tab, and every customization of this skill.
+
+1. **No em dashes, ever.** Never use the em dash character (the long horizontal dash, Unicode U+2014, the wide line that connects two clauses). Use commas, periods, colons, parentheses, or rewrite the sentence instead. Hyphens between single words (for example "data-informed") are fine.
+2. **No formulaic contrast phrasing.** Avoid patterns like "it's not X, it's Y", "not just X, but Y", or similar rhetorical moves. Say what you mean directly.
+3. **No flourish, filler, or padding.** Write plainly. Skip dramatic openers and throat-clearing.
+4. **Never assume, never fabricate. Resolve access first.** If the user provides a URL, a Confluence link, a file path, an uploaded document, or any pointer to information needed for the task, and you cannot actually fetch, read, or access it for any reason (authentication error, 404, permission denied, MCP not connected, file missing, paste truncated, anything else), STOP. Do not continue the task. Tell the user plainly what you tried, what went wrong, and what you need from them to resolve it. For example: "I tried to open the Confluence URL you gave me and got a permission error. Can you confirm I'm authenticated for that space, or paste the page contents here so I can work from that?" Never proceed by guessing or describing what the document probably contains. Never produce output that claims to be grounded in a source you could not actually read. The one and only exception: the user explicitly tells you to speculate, imagine, or assume for the current step. Absent that explicit permission, resolution of access comes first, every time.
+5. **Plain, user-friendly language throughout.** The people who use this skill are product designers, product managers, and similar roles, not developers. Avoid developer-speak ("run this command", "cd into the directory", "cat the file"). Explain any action in terms of what to click, type, or paste, in the interface they are actually in.
 
 ## Where Information Lives
 

@@ -1,4 +1,4 @@
-# Individual Skills — MB Smart Product Wiki
+# Individual Skills: MB Smart Product Wiki
 
 The three skills from the MB Smart Product Wiki plugin, each packaged as a standalone file so you can share one-at-a-time with a teammate without giving them the whole plugin.
 
@@ -6,9 +6,9 @@ The three skills from the MB Smart Product Wiki plugin, each packaged as a stand
 
 | Skill | `.md` alone | `.zip` (includes references) | Which to send |
 |---|---|---|---|
-| **MB Persona Maker** | [`mb-persona-maker.md`](./mb-persona-maker.md) | [`mb-persona-maker.zip`](./mb-persona-maker.zip) | **Send the `.md`** — this skill has no references folder, so the single file is complete. |
-| **MB Product Knowledgebase Assistant** | [`mb-product-knowledgebase-assistant.md`](./mb-product-knowledgebase-assistant.md) | [`mb-product-knowledgebase-assistant.zip`](./mb-product-knowledgebase-assistant.zip) | **Send the `.zip`** — this skill uses a `references/` folder that must be installed alongside it. |
-| **MB Product Knowledgebase Maker** | [`mb-product-knowledgebase-maker.md`](./mb-product-knowledgebase-maker.md) | [`mb-product-knowledgebase-maker.zip`](./mb-product-knowledgebase-maker.zip) | **Send the `.zip`** — same reason; it has a `references/` folder. |
+| **MB Persona Maker** | [`mb-persona-maker.md`](./mb-persona-maker.md) | [`mb-persona-maker.zip`](./mb-persona-maker.zip) | **Send the `.md`**. This skill has no references folder, so the single file is complete. |
+| **MB Product Knowledgebase Assistant** | [`mb-product-knowledgebase-assistant.md`](./mb-product-knowledgebase-assistant.md) | [`mb-product-knowledgebase-assistant.zip`](./mb-product-knowledgebase-assistant.zip) | **Send the `.zip`**. This skill uses a `references/` folder that must be installed alongside it. |
+| **MB Product Knowledgebase Maker** | [`mb-product-knowledgebase-maker.md`](./mb-product-knowledgebase-maker.md) | [`mb-product-knowledgebase-maker.zip`](./mb-product-knowledgebase-maker.zip) | **Send the `.zip`**. Same reason, it has a `references/` folder. |
 
 ## How to give a skill to a teammate
 
@@ -33,7 +33,7 @@ The three skills from the MB Smart Product Wiki plugin, each packaged as a stand
 >    ```
 >    (Substitute the actual filename you received.)
 > 3. Restart Claude Code (or run `/reload-plugins`).
-> 4. Type `/` in any chat — the new skill will be in the autocomplete.
+> 4. Type `/` in any chat. The new skill will appear in the autocomplete.
 
 The zip includes both the `.md` (which becomes the slash command) and the `references/` folder the skill needs to work properly.
 

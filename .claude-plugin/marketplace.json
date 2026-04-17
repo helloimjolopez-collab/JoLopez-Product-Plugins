@@ -9,12 +9,12 @@
     {
       "name": "pathway",
       "source": "./Pathway Tooling Claude Plugin/plugin-source",
-      "description": "The Pathway Design System tooling plugin. Five skills covering the full lifecycle of an Amplify component — from Figma handoff check through to a shipped component in GitHub and Storybook."
+      "description": "The Pathway Design System tooling plugin. Five skills covering the full lifecycle of an Amplify component, from Figma handoff check through to a shipped component in GitHub and Storybook."
     },
     {
       "name": "mb-smart-product-wiki",
       "source": "./MB Smart Product Wiki Claude Plugin/plugin-source",
-      "description": "Ministry Brands Smart Product Wiki. Three skills for product teams — Knowledgebase Maker, Knowledgebase Assistant, and Persona Maker."
+      "description": "Ministry Brands Smart Product Wiki. Three skills for product teams: Knowledgebase Maker, Knowledgebase Assistant, and Persona Maker. Plain language throughout, never proceeds on assumptions about content it cannot access."
     }
   ]
 }

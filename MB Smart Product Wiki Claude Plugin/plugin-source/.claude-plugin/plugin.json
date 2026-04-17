@@ -1,7 +1,7 @@
 {
   "name": "mb-smart-product-wiki",
-  "version": "1.7.0",
-  "description": "Ministry Brands Smart Product Wiki Plugin. Three skills for product teams: the Knowledgebase Maker (builds a two-page product knowledgebase, a Knowledge Base Overview dashboard plus a Knowledgebase deep reference, from a guided interview and live product walkthrough; both deliverables are delivered as Confluence-paste-ready markdown), the Knowledgebase Assistant (helps you query, update, audit, and walk Knowledgebase Integrity against specific tasks), and the Persona Maker (creates data-informed user personas with gap analysis and validation guides). All KBs save to the MB Design Ops Confluence template at https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview.",
+  "version": "1.8.0",
+  "description": "Ministry Brands Smart Product Wiki. Three skills for product teams: the Knowledgebase Maker (builds a complete two-page product knowledgebase, a Knowledge Base Overview dashboard plus a deep Knowledgebase reference, from a guided interview and live product walkthrough; both are paste-ready markdown for Confluence), the Knowledgebase Assistant (your day-to-day companion for querying, updating, auditing, and prepping your knowledgebase before any task; runs a structural audit automatically on every load), and the Persona Maker (creates data-informed user personas with gap analysis and a concrete validation plan). Plain language throughout, no developer jargon. Never proceeds on assumptions: if Claude cannot access a URL, document, or file the user referenced, it stops and resolves access first. All knowledgebases save to the MB Design Ops Confluence template at https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview.",
   "skills": "./skills/",
   "author": {
     "name": "Ministry Brands Product Team"

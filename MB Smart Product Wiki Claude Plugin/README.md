@@ -1,12 +1,12 @@
 # MB Smart Product Wiki Claude Plugin
 
-Ministry Brands Smart Product Wiki — three Claude Code skills for product teams. Builds and maintains product knowledgebases and user personas; all knowledgebases save to the [MB Design Ops Confluence template](https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview).
+Ministry Brands Smart Product Wiki: three Claude Code skills for product teams. Builds and maintains product knowledgebases and user personas. All knowledgebases save to the [MB Design Ops Confluence template](https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview).
 
 ## What's in this folder
 
 | File / folder | What it is |
 |---|---|
-| **[`MB Smart Product Wiki Claude Plugin (Full).zip`](./MB%20Product%20Intelligence%20Claude%20Plugin%20%28Full%29.zip)** | The full plugin — all 3 skills. Download this and upload it to the Customize tab to get everything. |
+| **[`MB Smart Product Wiki Claude Plugin (Full).zip`](./MB%20Smart%20Product%20Wiki%20Claude%20Plugin%20%28Full%29.zip)** | The full plugin, all 3 skills. Download this and upload it to the Customize tab to get everything. |
 | [`plugin-source/`](./plugin-source/) | The unzipped contents of the zip above. Browse/edit here. |
 | [`Individual Skills/`](./Individual%20Skills/) | Each of the 3 skills as a single file, for sharing one-at-a-time with teammates. |
 
@@ -14,7 +14,7 @@ Ministry Brands Smart Product Wiki — three Claude Code skills for product team
 
 | Skill | What it does |
 |---|---|
-| **MB Product Knowledgebase Maker** | Builds a two-page product knowledgebase — a Snapshot dashboard plus a Product Bible deep reference — from a guided interview and live product walkthrough. |
+| **MB Product Knowledgebase Maker** | Builds a two-page product knowledgebase, a Knowledge Base Overview dashboard plus a deep Knowledgebase reference, from a guided interview and live product walkthrough. |
 | **MB Product Knowledgebase Assistant** | Your companion for using a product knowledgebase day-to-day. Helps you query, update, audit, and walk KB integrity against specific tasks. |
 | **MB Persona Maker** | Guides you through building useful, data-informed user personas with gap analysis and validation guides. Can read an existing knowledgebase to jumpstart persona creation. |
 
@@ -31,8 +31,8 @@ All three are **safe for any product manager, designer, or researcher** to run.
 
 1. Go to [`Individual Skills/`](./Individual%20Skills/).
 2. Pick the skill you want to share.
-3. For **`mb-persona-maker`** — send them the `.md` file; they drop it in `~/.claude/commands/`.
-4. For **`mb-product-knowledgebase-assistant`** and **`mb-product-knowledgebase-maker`** — these skills have a `references/` folder alongside `SKILL.md`. Send the **`.zip`** instead (it preserves the references). They unzip into `~/.claude/commands/` so the skill plus its references live together.
+3. For **`mb-persona-maker`**, send them the `.md` file; they drop it in `~/.claude/commands/`.
+4. For **`mb-product-knowledgebase-assistant`** and **`mb-product-knowledgebase-maker`**, these skills have a `references/` folder alongside `SKILL.md`. Send the **`.zip`** instead (it preserves the references). They unzip into `~/.claude/commands/` so the skill plus its references live together.
 
 See [`Individual Skills/README.md`](./Individual%20Skills/README.md) for the exact instructions to give to a teammate.
 

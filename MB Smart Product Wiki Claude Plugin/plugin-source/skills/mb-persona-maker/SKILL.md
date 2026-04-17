@@ -1,6 +1,6 @@
 ---
 name: mb-persona-maker
-description: "Guides you through building useful, data-informed user personas. Use this any time someone wants to: create user personas, build persona documents, define target users, document user types, add personas to a product knowledgebase, or do any persona work. Triggers on: personas, user types, user profiles, target audience, ICP, user research, user interviews, Jobs to Be Done, JTBD. Works alone, or alongside the MB Product Knowledgebase Maker (it can read an existing knowledgebase to jumpstart persona creation). Built for Ministry Brands. Works for any SaaS product."
+description: "Guides you through building useful, data-informed user personas. Produces a persona document per user type plus a gap analysis and a concrete validation plan for every assumption that stood in for real data. Use this any time someone wants to create user personas, define target users, document user types, or add personas to a product knowledgebase. Works alone, or alongside the MB Product Knowledgebase Maker (it can read an existing knowledgebase to jumpstart persona drafting). Built for Ministry Brands. Works for any SaaS product."
 ---
 
 # MB Persona Maker
@@ -267,13 +267,13 @@ If no KB exists yet, note in the Data Validation Guide output that these items s
 
 ---
 
-## Style Rules (Persistent)
+## Working Principles (apply at all times, to every output)
 
-These rules apply to all outputs from this skill and must be followed in every session, every project, every chat, and every Cowork tab. They persist across updates and customizations. If this skill is modified, these rules must remain intact.
+These rules persist across every session, every project, every chat, every Cowork tab, and every customization of this skill. If this skill is modified, these rules must remain intact.
 
-1. **No em dashes.** Never use the em dash character. Use a hyphen with spaces ( - ) or restructure the sentence instead.
-2. **No formulaic phrasing.** Avoid patterns like "it's not X, it's Y" or "this isn't about X, it's about Y." Just state what it is directly.
-3. **No unnecessary flourish.** Write plainly. Skip dramatic openers, rhetorical questions used for effect, and filler phrases that sound impressive but add nothing.
-4. **Keep it clear and direct.** If a sentence can be shorter without losing meaning, make it shorter. Prefer concrete language over abstract language.
-5. **No jargon without context.** If a technical or industry term is needed, use it, but make sure it's clear from context what it means.
+1. **No em dashes, ever.** Never use the em dash character (the long horizontal dash, Unicode U+2014, the wide line that connects two clauses). Use commas, periods, colons, parentheses, or rewrite the sentence instead. Hyphens between single words (for example "data-informed") are fine.
+2. **No formulaic contrast phrasing.** Avoid patterns like "it's not X, it's Y", "not just X, but Y", or similar rhetorical moves. Say what you mean directly.
+3. **No flourish, filler, or padding.** Write plainly. Skip dramatic openers, rhetorical questions used for effect, and throat-clearing.
+4. **Never assume, never fabricate. Resolve access first.** If the user provides a URL, a Confluence link, a file path, an uploaded document, a knowledgebase, a persona doc, or any pointer to information needed for the task, and you cannot actually fetch, read, or access it for any reason (authentication error, 404, permission denied, MCP not connected, file missing, paste truncated, anything else), STOP. Do not continue the task. Tell the user plainly what you tried, what went wrong, and what you need from them to resolve it. For example: "I tried to open the Confluence URL you gave me and got a permission error. Can you confirm I'm authenticated for that space, or paste the page contents here so I can work from that?" Never proceed by guessing or describing what the document probably contains. Never produce output that claims to be grounded in a source you could not actually read. The one and only exception: the user explicitly tells you to speculate, imagine, or assume for the current step. Absent that explicit permission, resolution of access comes first, every time.
+5. **Plain, user-friendly language throughout.** The people who use this skill are product designers, product managers, researchers, and similar roles, not developers. Avoid developer-speak ("run this command", "cd into the directory", "cat the file"). Explain any action in terms of what to click, type, or paste, in the interface they are actually in.
 6. **These rules also apply to all generated documents** including persona documents, validation guides, interview guides, and any other output this skill produces.
