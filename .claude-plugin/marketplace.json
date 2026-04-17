@@ -10,6 +10,11 @@
       "name": "pathway",
       "source": "./Pathway Tooling Claude Plugin/plugin-source",
       "description": "The Pathway Design System tooling plugin. Five skills covering the full lifecycle of an Amplify component — from Figma handoff check through to a shipped component in GitHub and Storybook."
+    },
+    {
+      "name": "mb-product-intelligence",
+      "source": "./MB Product Intelligence Claude Plugin/plugin-source",
+      "description": "Ministry Brands Product Intelligence. Three skills for product teams — Knowledgebase Maker, Knowledgebase Assistant, and Persona Maker."
     }
   ]
 }
