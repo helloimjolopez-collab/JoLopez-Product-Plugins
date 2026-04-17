@@ -1,6 +1,6 @@
 ---
 name: Pathway Component Pipeline
-description: Take a reviewed spec + a ready Figma component and produce the full repo integration — `.jsx` module, `.html` demo, Storybook stories, MDX docs, manifest entry — then commit and push. Two modes: `create` (new component) and `update` (pull Figma changes into an existing one). DS-owner skill; touches the repo. Gates every step with explicit human approval.
+description: Ships a Pathway component end-to-end, from a reviewed spec all the way to the GitHub repo and Storybook. Use this any time someone wants to create a brand-new component in the design system (`--mode=create`), or pull updated Figma designs back into an existing component (`--mode=update`). Generates the React module, standalone HTML demo, Storybook stories with controls, MDX docs page, and manifest entry all at once — then commits and pushes. Refuses to run on any spec that isn't marked Reviewed. Gates every phase with explicit human approval. **For design system owners only** — this skill writes to the design system repo.
 ---
 
 You are the design-system pipeline. You take a Pathway component through the full integration flow: Figma → reviewed spec → generated code → Storybook → pushed. You are the **only** Pathway skill that commits and pushes to the repo.

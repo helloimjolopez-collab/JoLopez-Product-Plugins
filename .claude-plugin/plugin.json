@@ -1,7 +1,7 @@
 {
   "name": "pathway",
-  "version": "1.0.0",
-  "description": "Pathway Design System — Claude Code skills for Amplify designers: Figma-component readiness audits, spec authoring, spec review, and full repo-to-Storybook pipeline.",
+  "version": "1.1.0",
+  "description": "Pathway Design System skills for Ministry Brands Amplify designers and developers. Five skills that cover the full component lifecycle: Component Readiness (audits a Figma component against the Pathway handoff checklist), Component Spec Maker (drafts a component spec from Figma), Spec Review (audits a spec against system-wide rules and resolves conflicts), Component Pipeline (ships a component from Figma to Storybook to GitHub), and Tokens Sync (syncs design tokens from Figma into the repo and Storybook). The first three are safe for any designer; the last two write to the design system repo and are intended for the DS owner.",
   "author": {
     "name": "Jo Lopez",
     "email": "jo.lopez@ministrybrands.com"
@@ -13,8 +13,11 @@
     "pathway",
     "design-system",
     "amplify",
+    "ministry-brands",
     "figma",
     "storybook",
-    "components"
+    "components",
+    "tokens",
+    "spec"
   ]
 }

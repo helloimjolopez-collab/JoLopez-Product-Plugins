@@ -1,6 +1,6 @@
 ---
 name: Pathway Tokens Sync
-description: Sync Figma token export into the pathwaytokens repo, rebuild Style Dictionary and Storybook, commit and push. DS-owner skill.
+description: Syncs the latest Figma design token export into the Pathway repo, rebuilds Style Dictionary and Storybook, and pushes everything to GitHub. Use this any time someone wants to pull the latest variables from Figma into the codebase, update Storybook to reflect token changes, or publish a new version of the token library. Treats the Figma export as the single source of truth — when a variable is deleted in Figma, it drops out of every downstream file automatically. Dark-mode tokens are filtered out until the design system explicitly adopts dark mode. **For design system owners only** — this skill writes to the design system repo.
 ---
 
 Full pipeline: sync tokens from the Figma export, auto-fix naming, rebuild Style Dictionary and Storybook, push to GitHub.

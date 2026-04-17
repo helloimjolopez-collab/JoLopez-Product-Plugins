@@ -1,36 +1,32 @@
 # pathway-claude-skills
 
-Claude Code plugin for the Pathway Design System (Ministry Brands Amplify). Bundles the tooling that turns Figma work into shipped components in the `pathwaytokens` repo and Storybook.
-
-**Audience.** Any Amplify designer can install this plugin and use the three shareable skills (readiness, spec-maker, spec-review). The full pipeline and token-sync skills are intended for the design-system owner only — they write to and push the `pathwaytokens` repo.
+Claude Code plugin for the **Pathway Design System** (Ministry Brands Amplify). Five skills that cover the full lifecycle of a component — from a Figma handoff check, through drafting the spec, reviewing it, and finally shipping it into the design system repo and Storybook.
 
 ---
 
-## What's in the plugin
+## Who this is for
 
-Once installed, five commands become available in Claude Code under the `/pathway:` namespace:
+**Product designers** can use the first three skills freely. They don't write to any repo — they just read Figma, ask questions, and produce or audit local files.
 
-| Command | Audience | What it does |
+**Design system owners** (currently the team maintaining `pathwaytokens`) can use all five, including the two that commit and push to the design system repo.
+
+| Skill | Audience | One-line use |
 |---|---|---|
-| `/pathway:component-readiness` | Any designer | Checks a Figma component against the Pathway prep checklist. Read-only. |
-| `/pathway:component-spec-maker` | Any designer | Drafts a `<name>-spec.md` from a Figma component using the Pathway template. Marks output `Status: PENDING HUMAN REVIEW`. |
-| `/pathway:spec-review` | Any designer | Audits a draft spec against the overarching design system spec. Walks the user through every conflict. The only skill that can flip `Status:` to `REVIEWED`. |
-| `/pathway:component-pipeline` | DS owner | Full repo integration: generates `.jsx` + `.html` + stories + MDX + manifest, commits, pushes. Two modes — `create` and `update`. |
-| `/pathway:tokens-sync` | DS owner | Syncs the Figma token export into the repo, rebuilds Style Dictionary + Storybook, commits and pushes. |
-
-All skills gate every step with explicit human approval. None auto-proceed. None batch questions.
+| `Pathway Component Readiness` | Any designer | *"Is my Figma component ready for engineering?"* |
+| `Pathway Component Spec Maker` | Any designer | *"Draft a spec document from my Figma component."* |
+| `Pathway Spec Review` | Any designer | *"Audit this spec against the system rules and flag conflicts."* |
+| `Pathway Component Pipeline` | DS owner | *"Ship this component end-to-end — Figma to Storybook to GitHub."* |
+| `Pathway Tokens Sync` | DS owner | *"Pull the latest Figma tokens into the repo and Storybook."* |
 
 ---
 
-## Install
+## How to get the plugin
 
-You'll need:
+Three install paths depending on what you want.
 
-- Claude Code installed
-- Access to this private GitHub repo (you're a member of the Ministry Brands org, or have been added as a collaborator)
-- A `GITHUB_TOKEN` environment variable set in your shell with `repo` scope, so Claude Code can pull from the private repo
+### 1. Full plugin via Claude Code CLI (recommended for DS owners)
 
-In any Claude Code session, run:
+In any Claude Code session:
 
 ```
 /plugin marketplace add helloimjolopez-collab/pathway-claude-skills
@@ -38,82 +34,95 @@ In any Claude Code session, run:
 /reload-plugins
 ```
 
-Type `/pathway:` and you should see all five commands in the completions list.
+All five skills become available under `/pathway:*` (e.g. `/pathway:component-readiness`).
 
-To update later:
+### 2. Full plugin via the Customize tab (Claude Code desktop)
 
-```
-/plugin update pathway@pathway-claude-skills
-```
+If you prefer the Claude Code desktop UI:
 
-To uninstall:
+1. Download `pathway-claude-skills.zip` from the Releases page of this repo (or build it locally from source).
+2. Open Claude Code → **Customize** → **Personal plugins** → click the `+` button.
+3. Upload the `.zip`.
 
-```
-/plugin uninstall pathway@pathway-claude-skills
-```
+The plugin appears in your Customize tab, with a toggle to enable/disable and the full list of skills. Invoke skills the same way: type `/` in chat and pick one.
+
+### 3. Single-skill files via `for-designers/` (for ad-hoc sharing)
+
+If you only want to give a specific designer a specific skill — no full plugin install, no GitHub access — grab a file from [`for-designers/`](./for-designers/) and send it to them. They drop it into `~/.claude/commands/` on their Mac and it becomes a flat slash command (`/pathway-component-readiness` etc.).
+
+See [`for-designers/INSTALL.md`](./for-designers/INSTALL.md) for a non-technical one-pager aimed at designers.
 
 ---
 
-## What you need locally to use the skills
+## Prerequisites
 
-The skills assume you have the Pathway design system repo cloned at `/Users/<you>/Desktop/FigmaWork/pathwaytokens/`. They also need:
+Whichever install path you use, the skills themselves assume:
 
-- Figma MCP server configured (to read Figma components)
-- `gh` CLI authenticated (the pipeline skill commits and pushes)
-- `node` + `npm` (for the token-sync and pipeline skills)
+- **Figma MCP server** is configured in Claude Code (used to read components from Figma)
+- **`gh` CLI** authenticated (only needed for the two DS-owner skills that push to the repo)
+- **Node + npm** installed (only needed for Tokens Sync and Component Pipeline — they build tokens and Storybook locally)
+- **The `pathwaytokens` repo** cloned at `~/Desktop/FigmaWork/pathwaytokens/` (or wherever you've put it; the skills read spec templates and rules from there)
 
-The skills read rules from these files in the `pathwaytokens` repo:
-
-- `CLAUDE.md` — agent rules (source of truth, human-review principle)
-- `docs/design-system-spec.md` — overarching system spec (motion, accessibility, colour, spacing)
-- `docs/component-spec-template.md` — the template spec-maker copies from
-- `docs/figma-prep-checklist.md` — the checklist readiness runs against
-- `docs/storybook-authoring.md` — MDX standards the pipeline follows
-
-If any of these files are missing or have drifted from what the skills expect, the skills will say so.
+If any of these is missing, the skills will tell you what they can't do and stop — they never guess or fake results.
 
 ---
 
 ## How the skills compose
 
 ```
-Designer prepares Figma (follows docs/figma-prep-checklist.md)
+Designer prepares Figma (follows the prep checklist in pathwaytokens/docs/)
   │
   ▼
 /pathway:component-readiness <figma-url>
-  │         (reports ✓/✗/⚠/? against the checklist)
+  │    reports ✓ / ✗ / ⚠ / ? for each checklist item
   ▼
 /pathway:component-spec-maker <component-name> <figma-url>
-  │         (drafts -spec.md, marks PENDING HUMAN REVIEW)
-  │         — Claude asks questions one at a time
+  │    drafts components/<name>/<name>-spec.md
+  │    marks it Status: PENDING HUMAN REVIEW
+  │    asks clarifying questions one at a time
   ▼
-Designer reads the draft, fills in [TBD] markers
+Designer reads the draft, fills in any [TBD] markers
   │
   ▼
 /pathway:spec-review <component-name>
-  │         (walks through every conflict with the overarching spec)
-  │         — user approves each decision
-  │         — flips Status: to REVIEWED when all resolved
+  │    walks through every conflict with the system spec
+  │    user approves each decision
+  │    flips Status: to REVIEWED when all resolved
   ▼
 /pathway:component-pipeline <component-name> --mode=create
-          (DS-owner-only from here on)
-          — generates .jsx + .html + stories + MDX + manifest
-          — commits and pushes after explicit user approval
+       (DS owner only from here)
+       generates React module + HTML demo + Storybook stories + MDX + manifest
+       commits and pushes after explicit approval at every gate
 ```
 
-The first three skills are shareable with any designer. The pipeline skill writes to the `pathwaytokens` repo and should only be run by the DS owner.
+The first three skills are shareable with any designer. The pipeline skill writes to the design system repo and is intended for the DS owner.
+
+---
+
+## Human review at every step
+
+Every skill in this plugin follows one non-negotiable rule: **the human approves every gate.** Never batched questions, never auto-proceed between phases, never auto-commit, never auto-push, never auto-mark a spec as Reviewed. Claude drafts, flags, recommends — humans decide.
+
+See `pathwaytokens/CLAUDE.md` §11 for the canonical statement of this principle.
 
 ---
 
 ## Development
 
-Plugin files live in this repo. To edit a skill:
+Plugin source lives in this repo. To edit a skill:
 
 1. Clone this repo
-2. Edit `commands/*.md` as needed
-3. Either (a) commit and push, then `/plugin update` on each user's Mac, or (b) test locally first with `/plugin marketplace add ./path/to/this/repo` (overrides the cached version during development) and `/reload-plugins`
+2. Edit `skills/<skill-name>/SKILL.md`
+3. Test locally: `/plugin marketplace add ./path/to/this/repo` → `/plugin install pathway@pathway-claude-skills` → `/reload-plugins`
+4. Commit and push
+5. Bump `version` in `.claude-plugin/plugin.json` for non-trivial changes
 
-Versioning: bump `version` in `.claude-plugin/plugin.json` for any non-trivial change.
+To regenerate the distributable zip:
+
+```sh
+cd /path/to/pathway-claude-skills
+zip -r pathway-claude-skills.zip . -x ".git/*" ".DS_Store" "for-designers/*"
+```
 
 ---
 

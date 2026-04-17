@@ -1,6 +1,6 @@
 ---
 name: Pathway Component Readiness
-description: Check a Figma component against the Pathway prep checklist and report what's missing, wrong, or OK. Read-only — never modifies Figma or the repo. Shareable with any product designer.
+description: Checks your Figma component against the Pathway handoff checklist and tells you in plain English what's ready, what's broken, and what's missing before it can be handed off to engineering. Use this any time someone wants to audit whether a component is ready for implementation, find out why a Figma export looks wrong, get a readiness report before starting a spec, or validate that tokens and variants are correctly wired. Read-only — never modifies Figma or any repo. Safe for any product designer to run.
 ---
 
 You are auditing a Figma component against the handoff checklist in `/Users/jotemporary/Desktop/FigmaWork/pathwaytokens/docs/figma-prep-checklist.md`. Run every item, report findings in a clean block, and recommend concrete fixes for anything that fails.
