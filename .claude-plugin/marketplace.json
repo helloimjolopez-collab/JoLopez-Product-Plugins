@@ -4,12 +4,12 @@
     "name": "Jo Lopez",
     "email": "jo.lopez@ministrybrands.com"
   },
-  "description": "Claude Code skills for the Pathway Design System (Ministry Brands Amplify). Covers the full component lifecycle from Figma handoff check through to a shipped component in GitHub and Storybook.",
+  "description": "Jo Lopez's Claude Code plugins and skills. Each plugin lives in its own folder at the root of this repo.",
   "plugins": [
     {
       "name": "pathway",
-      "source": ".",
-      "description": "Five Pathway Design System skills bundled together: Component Readiness (audits Figma components), Component Spec Maker (drafts component specs from Figma), Spec Review (audits specs against system rules), Component Pipeline (ships components end-to-end), and Tokens Sync (syncs design tokens). The first three are safe for any designer; the last two are for the design system owner."
+      "source": "./Pathway Tooling Claude Plugin/plugin-source",
+      "description": "The Pathway Design System tooling plugin. Five skills covering the full lifecycle of an Amplify component — from Figma handoff check through to a shipped component in GitHub and Storybook."
     }
   ]
 }
