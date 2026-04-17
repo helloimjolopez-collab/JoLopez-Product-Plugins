@@ -226,6 +226,7 @@ Categories to consider:
 - Tables for structured data. Prose for context and narrative.
 - Section 4 Core User Flows **must** include a link to the flow artifact per flow. Text-only is not acceptable. The text steps are for machine comparison, the artifact link is for humans.
 - Section 6 Personas: a short summary is fine. The full persona doc lives wherever the Persona Maker skill placed it, linked from this section.
+- **Section 8 Known Risks & Dependencies must always be its own standalone top-level section.** Do not fold it into Current Challenges, Platform Architecture, or Knowledgebase Integrity. Risk content may cross-reference an Integrity row on the Knowledge Base Overview, but the section itself lives here and is mandatory on every Knowledgebase.
 - Do **not** include Last Updated, Last Audited, or Owned by here. Confluence tracks edit history natively. The Human Review Status block at the top of the Knowledgebase is the one exception, because "has a human actually read this" is not something Confluence tracks.
 - Do **not** duplicate content that lives on the Knowledge Base Overview. If you find yourself writing about Team & Stakeholders, Initiatives, Discovery, Knowledgebase Integrity, Integrations, or Business Context, stop and put it on the Knowledge Base Overview instead.
 - No em dashes anywhere. Use periods, commas, colons, or parentheses. Hyphens between single words are fine.

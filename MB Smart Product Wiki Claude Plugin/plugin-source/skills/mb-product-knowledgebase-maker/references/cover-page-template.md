@@ -178,9 +178,9 @@ Valid Status values for Planned:
 - **Validating** (validating the approach, data, or hypothesis)
 - **Awaiting Approval** (ready to move to In Progress pending sign-off)
 
-### Recently Completed
+### Recently Released
 
-Initiatives shipped in the last ~6 months. Keep this table for context and audit trail. Prune items older than 6 months on regular cleanup.
+Initiatives shipped in the last ~6 months. **This subsection is mandatory on every Knowledge Base Overview.** Keep this table for context and audit trail. Prune items older than 6 months on regular cleanup. If nothing has shipped in the last 6 months, keep the heading and table present with a single placeholder row ("None in the last ~6 months" across the row) rather than deleting the section.
 
 | Initiative | Short Description | Linked Docs | Released |
 |-----------|-------------------|-------------|----------|
@@ -223,7 +223,7 @@ Valid Status values (discovery lifecycle, roughly in order):
 - **Key Stakeholders must always include all five roles**: Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders. Use "N/A" for any role that genuinely does not apply.
 - Platform URL is non-optional. If the user cannot provide it, block KB generation and explain why: without it, no future audit can compare the KB to the live product.
 - **Knowledgebase Integrity lives on this page, prominently, right after the Team & Stakeholders section.** It is the trust layer for the entire document. Anyone consulting the KB, human or machine, must see it before relying on the KB for a task.
-- Product Initiatives uses three separate tables (In Progress, Planned, Recently Completed). Each initiative lives in exactly one based on its current state.
+- **Product Initiatives always uses three separate tables in this order: In Progress, Planned, Recently Released.** All three are mandatory and must always be present on the Knowledge Base Overview, even if a table is empty. Each initiative lives in exactly one based on its current state.
 - Discovery Backlog is one table with a Status column covering the full discovery lifecycle.
 - If a field is unknown, write "TBD" rather than leaving blank (except Platform URL).
 - Do NOT add Last Updated, Last Audited, or Owned by fields. Confluence tracks edit history natively.

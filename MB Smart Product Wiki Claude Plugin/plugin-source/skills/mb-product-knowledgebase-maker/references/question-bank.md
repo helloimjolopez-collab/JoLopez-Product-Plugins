@@ -118,7 +118,7 @@ Flag every unvalidated claim internally. Don't announce each flag - just keep th
 48. Are there internal team frustrations - things that slow you down or cause friction?
 49. Are there architectural constraints that limit what you can build or how fast you can ship?
 
-## 9. Product Initiatives (In Progress, Planned, Recently Completed)
+## 9. Product Initiatives (In Progress, Planned, Recently Released)
 
 All three tables live on the Knowledge Base Overview. Each initiative lives in exactly one based on its current state. Capture name, short description, linked docs (PRD, PIO, brief), and a status value from the allowed list for its table.
 
@@ -134,7 +134,7 @@ All three tables live on the Knowledge Base Overview. Each initiative lives in e
     - Linked docs
     - Status (pick one): **Discovering**, **Validating**, **Awaiting Approval**
 
-52. **Recently Completed.** What has shipped in the last ~6 months? For each, capture:
+52. **Recently Released.** What has shipped in the last ~6 months? For each, capture:
     - Name
     - One-line description
     - Linked docs (PRD, PIO, retro if any)

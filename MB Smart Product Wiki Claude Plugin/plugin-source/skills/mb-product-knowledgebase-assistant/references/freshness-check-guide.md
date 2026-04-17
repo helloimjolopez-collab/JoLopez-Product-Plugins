@@ -72,7 +72,7 @@ For every row in each of the three sub-tables (Host System, Product Integrations
 
 - [ ] Each row still actively being built?
 - [ ] Status value is one of: In Design, Refining, Implementing, QA, Commercializing, Releasing. Any invalid?
-- [ ] Any items here have actually shipped? (If yes, move to Recently Completed.)
+- [ ] Any items here have actually shipped? (If yes, move to Recently Released.)
 - [ ] Any items have stalled? (Update status or move to a different table.)
 - [ ] All linked docs still resolve?
 
@@ -83,7 +83,7 @@ For every row in each of the three sub-tables (Host System, Product Integrations
 - [ ] Any items should now be in In Progress?
 - [ ] All linked docs still resolve?
 
-**Recently Completed table:**
+**Recently Released table:**
 
 - [ ] Any items older than ~6 months that should be pruned?
 - [ ] Released dates accurate?

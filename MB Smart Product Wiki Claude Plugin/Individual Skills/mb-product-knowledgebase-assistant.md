@@ -27,7 +27,7 @@ Ministry Brands product knowledgebases live in Confluence as a two-page hierarch
    - **Key Stakeholders** (5 required roles: Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders)
    - **Knowledgebase Integrity** (prominent, right after Team & Stakeholders; trust layer with Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date. Status values: Open, Planned, In Progress, Resolved.)
    - Integrations & Third Parties (detailed breakdown of host integrations, product integrations, backend systems)
-   - Product Initiatives (three tables: In Progress, Planned, Recently Completed)
+   - Product Initiatives (three tables: In Progress, Planned, Recently Released)
    - Discovery Backlog (one table with status)
 
 2. **The Knowledgebase** (child page nested under the Knowledge Base Overview, named "[Product Name] Knowledgebase"). The deep technical reference. Holds:
@@ -51,7 +51,7 @@ The two pages do not duplicate each other. If you are about to update something,
 | Team (VP, Dev Director, Dev Manager, PM, Product Designers, Engineers, QA) | Knowledge Base Overview (Team table) |
 | Key Stakeholders (Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders) | Knowledge Base Overview (Key Stakeholders table) |
 | Validation gaps, unvalidated claims, maintenance to-dos | Knowledge Base Overview (Knowledgebase Integrity) |
-| Product Initiatives (In Progress, Planned, Recently Completed) | Knowledge Base Overview (Product Initiatives, three tables) |
+| Product Initiatives (In Progress, Planned, Recently Released) | Knowledge Base Overview (Product Initiatives, three tables) |
 | Discovery items | Knowledge Base Overview (Discovery Backlog) |
 | Integrations, host systems, backend vendors (detailed breakdown) | Knowledge Base Overview (Integrations & Third Parties) |
 | Architecture, tech stack, data model | Knowledgebase (Section 2) |
@@ -102,13 +102,97 @@ Before doing anything, load both pages (ideally) or whatever is available.
 3. **Paste** - "You can paste the contents here if that's easier."
 4. **Previous session** - If the user has worked with you before and the files are in a known location, check there first.
 
-Once loaded, before confirming load success run a quick structural check on the Knowledge Base Overview:
+Once both are loaded (or whichever is available), immediately run the Structural Audit below. Do not skip it, do not ask the user for permission to run it, do not defer it. Structural integrity is the floor that everything else (queries, updates, freshness audits, task context) stands on. If the floor is cracked, every other answer is suspect.
 
-1. **Platform URL present and resolves?** The Knowledge Base Overview Product Overview must have a Platform URL filled in with a real, clickable link. Open it. If it is missing, bare text, a placeholder like "TBD", returns a 404, or redirects somewhere unexpected, surface this as the first finding: "Heads up, this KB is missing or has a broken Platform URL. Without it, no audit can compare the KB to the live product. Can you provide or fix the Platform URL before we go further?"
-2. **Knowledgebase Integrity table present?** Scan it. Note the number of rows, the spread of statuses (Open / Planned / In Progress / Resolved), and any rows that are missing columns.
-3. **Human Review Status on the Knowledgebase?** Check whether a human has reviewed the Knowledgebase end-to-end and when. If "Fully reviewed" is No or the last review is older than 6 months, flag it.
+## Structural Audit (Runs Automatically on Every Load)
 
-Then confirm: "I've loaded [Product Name]'s Knowledge Base Overview and Knowledgebase. [Knowledge Base Overview status note]. The Knowledgebase Integrity table has [N] rows ([breakdown by status]). Human Review Status: [Yes / No, date if yes]. What would you like to do?"
+This audit validates that the KB you just loaded actually matches the standards the MB Product Knowledgebase Maker would produce on a first run. Run it silently first, then report findings to the user.
+
+### What to check
+
+**On the Knowledge Base Overview:**
+
+1. **Product Overview table: all 15 required rows present?**
+   Product Name(s), Product Modality, Status, Platform URL, Testing Environment URL, Point of Contact for Testing Environment Credentials, Integrated Partners, Backend or Third-Party Systems, Total Customers, Yearly Revenue / ARR, TAM, Relevant Competitors, Customer Journey Map Links, Service Blueprint Links, Core User Flows (Links). Any row missing counts as a gap. Rows present but valued "TBD" are acceptable except Platform URL.
+2. **Platform URL: present and resolves?**
+   The Platform URL must be a real, clickable link and must not be "TBD" or blank. Open it. If missing, bare text, placeholder, 404, or unexpected redirect, flag as blocking.
+3. **Team table: all 7 required rows present?**
+   VP, Dev Director, Dev Manager, Product Manager, Product Designers, Engineers, QA. Rows present with "N/A" are acceptable. Missing rows are gaps.
+4. **Key Stakeholders table: all 5 required roles present?**
+   Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders. Rows present with "N/A" are acceptable. Missing rows are gaps.
+5. **Knowledgebase Integrity section: present and structured correctly?**
+   - Must exist, and must sit prominently right after Team & Stakeholders (not buried at the bottom, not on the Knowledgebase child page).
+   - Must use these 7 columns in this order: **Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date**. Any other column set (for example the old "Item / What's Missing / Why It Matters / How to Validate / Who / When / Status" layout) is a structural gap.
+   - Status values must be one of: **Open / Planned / In Progress / Resolved**. Any other value is a gap.
+6. **Integrations & Third Parties section: present?**
+   Should be a distinct section with a breakdown of host integrations, product integrations, and backend systems.
+7. **Product Initiatives: all three tables present, with correct names?**
+   Three separate tables, in this order: **In Progress**, **Planned**, **Recently Released**. The Recently Released table is mandatory and must always be present, even if empty (use a placeholder row "None in the last ~6 months" rather than omitting the table). An initiatives section that has only one or two tables is a structural gap. "Recently Completed" is the old name for this table and counts as a gap to be renamed to "Recently Released".
+8. **Discovery Backlog: present?**
+   One table with a Status column covering the discovery lifecycle.
+
+**On the Knowledgebase (child page):**
+
+9. **Human Review Status block at top?**
+   Must show when each section was last reviewed and by whom. If missing entirely, that is a structural gap. If present but "Fully reviewed" is No or the last review is older than 6 months, note it (not a structural gap, but flag it).
+10. **All 8 sections present and in order?**
+    1. Product Overview (narrative), 2. Platform Architecture, 3. Features & Functionality, 4. Core User Flows, 5. Current Challenges, 6. Personas, 7. Terminology & Mental Models, 8. Known Risks & Dependencies. Missing or renamed sections are structural gaps.
+11. **Known Risks & Dependencies is its own standalone section?**
+    Section 8 must exist as its own top-level heading on the Knowledgebase. It cannot be folded into Current Challenges, Platform Architecture, or any other section, and it cannot live only as rows in Knowledgebase Integrity on the Knowledge Base Overview. If it is missing as a standalone section, that is a structural gap, even if risk-like content appears elsewhere. Risks that surface during an audit or update must be added here, with a cross-reference to the corresponding Knowledgebase Integrity row if one exists.
+12. **Core User Flows: every flow has an artifact link?**
+    Each flow entry must include a link to a Figma file, prototype, walkthrough, or equivalent artifact. Flows without links are a structural gap.
+
+### How to classify findings
+
+- **Blocking gap.** Platform URL missing/broken. Without this, no audit can compare the KB to live product. Surface immediately, block further audit work until resolved.
+- **Structural gap.** Missing required section, missing required row, wrong column set, wrong status vocabulary, missing mandatory Recently Released table, missing Human Review Status block, missing artifact link on a Core User Flow.
+- **Content gap.** Row present but valued "TBD" or blank (except Platform URL). Not a structural gap on its own, but worth noting.
+- **Staleness note.** Human Review Status older than 6 months, Recently Released rows older than 6 months, anything the freshness check would flag. Not structural. Note it.
+
+### Report to the user
+
+After the audit, report findings in this shape:
+
+> I've loaded [Product Name]'s Knowledge Base Overview and Knowledgebase. Here's the structural audit:
+>
+> **Blocking:** [list, or "None."]
+> **Structural gaps:** [list, or "None. The KB matches the Maker's template."]
+> **Content gaps (TBDs):** [short count and examples, or "None."]
+> **Staleness:** [one-line note, or "None."]
+>
+> [If there are any blocking or structural gaps:] Want to do a quick tidy-up before we move on to your actual task? I'll walk you through each gap one at a time. It's fine if you don't have every answer right now, we can mark what's unresolved as a Knowledgebase Integrity row and come back to it.
+
+### Tidy-up flow (if the user says yes)
+
+Work through the gaps one at a time, smallest to largest. For each gap:
+
+1. State the gap plainly. ("Your Team table is missing QA.")
+2. Ask one question. ("Who is QA on this product? Or should I mark this N/A?")
+3. Wait for the user's answer. If the user says they don't know, do not guess and do not skip. Offer two paths: (a) mark the gap as a Knowledgebase Integrity row with Status "Open" and move on; (b) leave the field as "TBD" and add an Integrity row flagging it.
+4. Apply the fix to the correct page.
+5. Move to the next gap.
+
+Never batch multiple questions at once. Never auto-proceed after receiving an answer to another question. One gap, one question, one answer, one fix, then next.
+
+### Tidy-up flow (if the user says no)
+
+Proceed with whatever task the user actually wanted, but for every structural gap you identified, add a row to the Knowledgebase Integrity table with:
+
+- **Name:** short title of the gap ("Missing Recently Released initiatives table")
+- **Description:** what is missing or malformed
+- **Urgency or Importance:** your honest read (High / Medium / Low)
+- **Assigned To:** blank (user fills in later)
+- **Status:** Open
+- **Date Flagged:** today's date
+- **Target Resolution Date:** blank (user fills in later)
+
+Tell the user you've logged the gaps as Integrity rows so nothing is silently forgotten. Then proceed with their task.
+
+### What the audit does not do
+
+- It does not read the Platform URL's content or compare KB claims against the live product. That is a Freshness Check (Mode 3), not a structural audit.
+- It does not validate Knowledgebase Integrity row content or chase down unresolved gaps. That is Task Context (Mode 4).
+- It does not rewrite or restructure the KB on its own. Every change the tidy-up flow applies is confirmed by the user first.
 
 ## Understanding What the User Wants
 
@@ -211,9 +295,9 @@ Start with checks you can make just by reading the Knowledge Base Overview:
 
 **Product Initiatives (three tables)**
 
-- Are items in "In Progress" actually in progress? Any that have shipped and should move to Recently Completed?
+- Are items in "In Progress" actually in progress? Any that have shipped and should move to Recently Released?
 - Are items in "Planned" still planned, or have priorities shifted?
-- Does Recently Completed have items older than ~6 months that should be pruned?
+- Does Recently Released have items older than ~6 months that should be pruned?
 - Do all items have valid Status values from their table's allowed list?
 
 **Discovery Backlog**

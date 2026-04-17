@@ -32,7 +32,7 @@ The Knowledge Base Overview is the one-page dashboard. It holds:
 - **Key Stakeholders** (5 required roles, always present: Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders)
 - **Knowledgebase Integrity** (prominent trust layer right after Team & Stakeholders; every unvalidated claim, flagged gap, or maintenance to-do with Name, Description, Urgency/Importance, Assigned To, Status, Date Flagged, Target Resolution Date)
 - Integrations & Third Parties (detailed breakdown of host integrations, product integrations, backend systems)
-- Product Initiatives (three tables: In Progress, Planned, Recently Completed)
+- Product Initiatives (three tables: In Progress, Planned, Recently Released)
 - Discovery Backlog (one table with a status column)
 
 The Knowledgebase is the deep reference. It holds:
@@ -153,7 +153,7 @@ Work through these categories in order. Read `references/question-bank.md` for t
 
 - **In Progress** initiatives (with status: In Design, Refining, Implementing, QA, Commercializing, Releasing)
 - **Planned** initiatives (with status: Discovering, Validating, Awaiting Approval)
-- **Recently Completed** (shipped in last ~6 months)
+- **Recently Released** (shipped in last ~6 months)
 - For each: short description and linked docs (PRD, PIO, brief)
 
 **11. Discovery Backlog**
@@ -231,7 +231,7 @@ This is the parent Confluence page, named "[Product Name] Knowledge Base Overvie
    - **Key Stakeholders** (5 required roles: Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders)
 3. **Knowledgebase Integrity** (prominent, right after Team & Stakeholders; one table with Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date. Status values: Open, Planned, In Progress, Resolved.)
 4. **Integrations & Third Parties** (host integrations, product integrations, backend systems)
-5. **Product Initiatives** (three tables: In Progress, Planned, Recently Completed, each with Name / Short Description / Linked Docs / Status)
+5. **Product Initiatives** (three tables: In Progress, Planned, Recently Released, each with Name / Short Description / Linked Docs / Status)
 6. **Discovery Backlog** (one table with Name / Short Description / Linked Docs / Status)
 
 Save as `[Product Name] Knowledge Base Overview.md`. This is what gets pasted into the parent Confluence page.
