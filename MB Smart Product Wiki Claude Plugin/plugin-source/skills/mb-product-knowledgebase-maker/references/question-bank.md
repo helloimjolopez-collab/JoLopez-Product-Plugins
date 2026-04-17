@@ -102,7 +102,7 @@ Flag every unvalidated claim internally. Don't announce each flag - just keep th
 41. What are the core user flows, the 3 to 5 things users do most often?
     - Walk me through each one at a high level.
     - **For each flow, ask: is there an existing artifact (Figma flow page, Lucid chart, interactive HTML flow map, or similar)?** Capture the link per flow. These links are required on the Knowledge Base Overview Product Overview ("Core User Flows (links)") and on each flow's subheader table in Knowledgebase Section 4.
-    - **If a flow has no artifact yet**, flag it as a KB Integrity row: "Flow [name] has no artifact link" with Status "Not Started" and a proposed Who and When.
+    - **If a flow has no artifact yet**, flag it as a Knowledgebase Integrity row: "Flow [name] has no artifact link" with Status "Open" and a proposed Who and When.
     - *Validation probe:* "When you say these are the flows users do most, is that from Pendo analytics showing the top flows, or from your understanding of the product? Both are useful, I just want to note the source."
 42. How is the product organized? (what's in the sidebar/nav, how do users get around)
 43. Are there any features that work completely differently from how they look? (e.g., a button that says "Create" but actually just searches)
@@ -118,7 +118,7 @@ Flag every unvalidated claim internally. Don't announce each flag - just keep th
 48. Are there internal team frustrations - things that slow you down or cause friction?
 49. Are there architectural constraints that limit what you can build or how fast you can ship?
 
-## 9. Product Initiatives (In Progress, Planned, Recently Complete)
+## 9. Product Initiatives (In Progress, Planned, Recently Completed)
 
 All three tables live on the Knowledge Base Overview. Each initiative lives in exactly one based on its current state. Capture name, short description, linked docs (PRD, PIO, brief), and a status value from the allowed list for its table.
 
@@ -134,7 +134,7 @@ All three tables live on the Knowledge Base Overview. Each initiative lives in e
     - Linked docs
     - Status (pick one): **Discovering**, **Validating**, **Awaiting Approval**
 
-52. **Recently Complete.** What has shipped in the last ~6 months? For each, capture:
+52. **Recently Completed.** What has shipped in the last ~6 months? For each, capture:
     - Name
     - One-line description
     - Linked docs (PRD, PIO, retro if any)
@@ -152,7 +152,7 @@ All discovery items live on the Knowledge Base Overview Discovery Backlog table.
 
 54. Are there any known upcoming asks from stakeholders, customers, or sales that should be in Discovery but are not yet captured?
 
-55. What are the current challenges or blockers the team is facing? (These may be candidates for Known Risks & Dependencies in the Knowledgebase Section 8, or KB Integrity rows on the Knowledge Base Overview.)
+55. What are the current challenges or blockers the team is facing? (These may be candidates for Known Risks & Dependencies in the Knowledgebase Section 8, or Knowledgebase Integrity rows on the Knowledge Base Overview.)
 
 ## 11. Personas
 
@@ -161,7 +161,7 @@ All discovery items live on the Knowledge Base Overview Discovery Backlog table.
 59. **Main Personas (for the Knowledge Base Overview Product Overview "Main Personas" row):** Even before building full personas, give me the short list: name and one-line role per primary, secondary, and tertiary persona. Example: "Sarah, Volunteer Coordinator (primary); Pastor Mike, Campus Pastor (secondary)". This goes into the Knowledge Base Overview Product Overview table. Full per-persona detail goes into Knowledgebase Section 6 (Personas) or a separate persona doc built with the Persona Maker skill.
 60. If no full personas exist: would you like to build them now as part of this process, or later?
     - If now: transition to the MB Persona Maker skill (see below).
-    - If later: note this as a KB Integrity row on the Knowledge Base Overview.
+    - If later: note this as a Knowledgebase Integrity row on the Knowledge Base Overview.
 
 **If the user wants to build personas:** Tell them about the MB Persona Maker skill. It's a companion skill that guides a deep persona creation process - interviewing for user types, goals, frustrations, workflows, and critically, identifying data gaps and giving them a full validation guide for gathering the research they need. The persona output integrates directly into this knowledgebase.
 

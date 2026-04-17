@@ -61,7 +61,7 @@ for f in pathway-*.md; do zip -q "${f%.md}.zip" "$f"; done
 cd ..
 ```
 
-Then commit and push. After that you can either `/plugin update pathway@pathway-claude-skills` in Claude Code (CLI install) or re-upload the new zip to the Customize tab.
+Then commit and push. After that you can either `/plugin update pathway@jolopez-product-plugins` in Claude Code (CLI install) or re-upload the new zip to the Customize tab.
 
 ## The plugin's design principles
 

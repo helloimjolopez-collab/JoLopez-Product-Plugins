@@ -1,6 +1,6 @@
-# Individual Skills — MB Product Intelligence
+# Individual Skills — MB Smart Product Wiki
 
-The three skills from the MB Product Intelligence plugin, each packaged as a standalone file so you can share one-at-a-time with a teammate without giving them the whole plugin.
+The three skills from the MB Smart Product Wiki plugin, each packaged as a standalone file so you can share one-at-a-time with a teammate without giving them the whole plugin.
 
 ## What's here
 

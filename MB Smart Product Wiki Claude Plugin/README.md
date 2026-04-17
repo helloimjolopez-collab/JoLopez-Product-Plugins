@@ -1,12 +1,12 @@
-# MB Product Intelligence Claude Plugin
+# MB Smart Product Wiki Claude Plugin
 
-Ministry Brands Product Intelligence — three Claude Code skills for product teams. Builds and maintains product knowledgebases and user personas; all knowledgebases save to the [MB DesignOps Confluence template](https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Knowledge+Base+Template).
+Ministry Brands Smart Product Wiki — three Claude Code skills for product teams. Builds and maintains product knowledgebases and user personas; all knowledgebases save to the [MB Design Ops Confluence template](https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview).
 
 ## What's in this folder
 
 | File / folder | What it is |
 |---|---|
-| **[`MB Product Intelligence Claude Plugin (Full).zip`](./MB%20Product%20Intelligence%20Claude%20Plugin%20%28Full%29.zip)** | The full plugin — all 3 skills. Download this and upload it to the Customize tab to get everything. |
+| **[`MB Smart Product Wiki Claude Plugin (Full).zip`](./MB%20Product%20Intelligence%20Claude%20Plugin%20%28Full%29.zip)** | The full plugin — all 3 skills. Download this and upload it to the Customize tab to get everything. |
 | [`plugin-source/`](./plugin-source/) | The unzipped contents of the zip above. Browse/edit here. |
 | [`Individual Skills/`](./Individual%20Skills/) | Each of the 3 skills as a single file, for sharing one-at-a-time with teammates. |
 
@@ -22,7 +22,7 @@ All three are **safe for any product manager, designer, or researcher** to run.
 
 ## Install the full plugin (for yourself)
 
-1. Download **`MB Product Intelligence Claude Plugin (Full).zip`** (the file in this folder).
+1. Download **`MB Smart Product Wiki Claude Plugin (Full).zip`** (the file in this folder).
 2. Open Claude Code → **Customize** → **Personal plugins**.
 3. Click the `+` button, select the zip.
 4. Done. All three skills are now available under `/mb-*` slash commands.
@@ -41,11 +41,11 @@ See [`Individual Skills/README.md`](./Individual%20Skills/README.md) for the exa
 Source files live in `plugin-source/`. Edit there, regenerate the zip, commit, push.
 
 ```sh
-cd "MB Product Intelligence Claude Plugin"
+cd "MB Smart Product Wiki Claude Plugin"
 
 # Regenerate the full-plugin zip
 cd plugin-source
-zip -r "../MB Product Intelligence Claude Plugin (Full).zip" . -x ".DS_Store"
+zip -r "../MB Smart Product Wiki Claude Plugin (Full).zip" . -x ".DS_Store"
 cd ..
 
 # Regenerate individual skill files + zips

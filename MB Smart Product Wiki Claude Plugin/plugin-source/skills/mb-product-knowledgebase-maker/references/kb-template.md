@@ -21,7 +21,7 @@ Writing style: no em dashes. Use periods, commas, colons, or parentheses. Hyphen
 
 ## Human Review Status
 
-This block tracks whether a human has done a full end-to-end review of this document. AI-generated and AI-assisted knowledgebases can look polished without actually being correct; a human has to read the whole thing before it can be trusted as authoritative. This is distinct from the KB Integrity table on the Knowledge Base Overview: KB Integrity tracks specific unresolved gaps, this tracks whether a person has actually sat down and read the document end to end.
+This block tracks whether a human has done a full end-to-end review of this document. AI-generated and AI-assisted knowledgebases can look polished without actually being correct; a human has to read the whole thing before it can be trusted as authoritative. This is distinct from the Knowledgebase Integrity table on the Knowledge Base Overview: Knowledgebase Integrity tracks specific unresolved gaps, this tracks whether a person has actually sat down and read the document end to end.
 
 | | |
 |---|---|
@@ -100,7 +100,7 @@ This section is the feature inventory. For step-by-step user paths, see Section 
 
 This section is primarily for machine consumption, not human reading. Humans looking at user flows should open the linked flow artifact directly (Figma flow, Lucid chart, interactive HTML flow map). This section exists so an LLM, auditor, or automated process can compare the live product against documented flows without needing to interpret a visual artifact.
 
-**Every flow in this section must include a link to the actual flow artifact in the subheader table.** A text-only description is not sufficient. If a flow has no artifact link, flag it in the Knowledge Base Overview KB Integrity table with Status "Not Started" so someone creates one.
+**Every flow in this section must include a link to the actual flow artifact in the subheader table.** A text-only description is not sufficient. If a flow has no artifact link, flag it in the Knowledge Base Overview Knowledgebase Integrity table with Status "Open" so someone creates one.
 
 ### Flow 1: [Flow Name]
 
@@ -184,7 +184,7 @@ If personas were built using the MB Persona Maker skill, link to the full person
 
 ### Persona Data Gaps
 
-[Any persona attributes based on assumptions rather than validated data. These should also appear as rows in the Knowledge Base Overview KB Integrity table with Status values so they roll up into the document's trust layer.]
+[Any persona attributes based on assumptions rather than validated data. These should also appear as rows in the Knowledge Base Overview Knowledgebase Integrity table with Status values so they roll up into the document's trust layer.]
 
 ---
 
@@ -227,6 +227,6 @@ Categories to consider:
 - Section 4 Core User Flows **must** include a link to the flow artifact per flow. Text-only is not acceptable. The text steps are for machine comparison, the artifact link is for humans.
 - Section 6 Personas: a short summary is fine. The full persona doc lives wherever the Persona Maker skill placed it, linked from this section.
 - Do **not** include Last Updated, Last Audited, or Owned by here. Confluence tracks edit history natively. The Human Review Status block at the top of the Knowledgebase is the one exception, because "has a human actually read this" is not something Confluence tracks.
-- Do **not** duplicate content that lives on the Knowledge Base Overview. If you find yourself writing about Team & Stakeholders, Initiatives, Discovery, KB Integrity, Integrations, or Business Context, stop and put it on the Knowledge Base Overview instead.
+- Do **not** duplicate content that lives on the Knowledge Base Overview. If you find yourself writing about Team & Stakeholders, Initiatives, Discovery, Knowledgebase Integrity, Integrations, or Business Context, stop and put it on the Knowledge Base Overview instead.
 - No em dashes anywhere. Use periods, commas, colons, or parentheses. Hyphens between single words are fine.
 - The document should be thorough enough that a new team member can read it cold and understand the product.

@@ -51,7 +51,7 @@ Read both pages of the KB: the **Knowledge Base Overview** (parent page, named "
 - **Terminology that hints at user segments** - Knowledgebase Section 7 (Terminology & Mental Models).
 - **Team and Stakeholders** - Knowledge Base Overview Product Overview and Knowledge Base Overview Key Stakeholders sub-table (useful for knowing who to interview during persona validation). There is no dedicated Team section in the Knowledgebase anymore.
 - **Known Risks & Dependencies** - Knowledgebase Section 8 (some may be persona-specific pain points, e.g., compliance burden falling on specific personas, vendor concentration affecting specific user types).
-- **Open Validation items** - Knowledge Base Overview **KB Integrity** table (columns: Item / What's Missing / Why It Matters / How to Validate / Who / When / Status). Many rows will already be persona-related. Note which ones are "Not Started" vs "In Progress" vs "Validated" so you know what context is trustworthy.
+- **Open Validation items** - Knowledge Base Overview **Knowledgebase Integrity** table (columns: Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date). Many rows will already be persona-related. Note which ones are "Open" vs "Planned" vs "In Progress" vs "Resolved" so you know what context is trustworthy.
 - **Business Context** - Knowledge Base Overview Business Context table (customer count, revenue, pricing, competitors, TAM). Useful for sizing persona segments.
 - **Integrations** - Knowledge Base Overview Integrations & Third Parties (host systems, product integrations, backend vendors). Useful for understanding which personas touch which integration points.
 - **Human Review Status** - Knowledgebase top block. If "Fully reviewed" is No or review is stale, treat the Knowledgebase content as draft and flag it to the user before building personas on top of it.
@@ -225,7 +225,7 @@ Tell the user:
 > 1. The persona document(s) I just produced.
 > 2. Your current Knowledge Base Overview markdown (or paste the Confluence URL of the Knowledge Base Overview page).
 > 3. Your current Knowledgebase markdown (or link).
-> 4. The Data Validation Guide, so any persona-specific validation gaps can be added as rows in the Knowledge Base Overview KB Integrity table.
+> 4. The Data Validation Guide, so any persona-specific validation gaps can be added as rows in the Knowledge Base Overview Knowledgebase Integrity table.
 >
 > The Assistant will give you back updated Knowledge Base Overview and Knowledgebase markdown ready to paste over your existing Confluence pages. The template format stays intact."
 
@@ -235,19 +235,19 @@ If the user has not yet created a product KB, tell them:
 
 > "Before adding these personas, you need a product KB for this product. Use the **MB Product Knowledgebase Maker** skill to create one, then save it to Confluence using the MB Design Ops template at https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview. Once the KB exists, come back and use the KB Assistant to merge these personas in."
 
-### Persona-Specific KB Integrity Rows
+### Persona-Specific Knowledgebase Integrity Rows
 
-For every gap the persona gap analysis surfaced (Phase 3), the corresponding KB Integrity row on the Knowledge Base Overview should use the full seven-column format:
+For every gap the persona gap analysis surfaced (Phase 3), the corresponding Knowledgebase Integrity row on the Knowledge Base Overview should use the full seven-column format:
 
-**Item / What's Missing, Assumed, or Incomplete / Why It Matters / How to Validate / Who / When / Status**
+**Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date**
 
-Tag the Item to show it originated here (e.g., "Persona: Sarah, assumed tech comfort 3/5"). Set Status to "Not Started" for new rows.
+Tag the Name to show it originated here (e.g., "Persona: Sarah, assumed tech comfort 3/5"). Set Status to "Open" for new rows.
 
-This keeps the Knowledge Base Overview KB Integrity table as the single source of truth for every open question about the product, including persona assumptions. A standalone persona validation guide that lives only in a persona doc drifts. One that also lives in the KB's trust layer doesn't.
+This keeps the Knowledge Base Overview Knowledgebase Integrity table as the single source of truth for every open question about the product, including persona assumptions. A standalone persona validation guide that lives only in a persona doc drifts. One that also lives in the KB's trust layer doesn't.
 
-If no KB exists yet, note in the Data Validation Guide output that these items should be migrated into a Knowledge Base Overview KB Integrity table once the KB is created.
+If no KB exists yet, note in the Data Validation Guide output that these items should be migrated into a Knowledge Base Overview Knowledgebase Integrity table once the KB is created.
 
-When merging, use the KB's column structure: **Item / What's Missing, Assumed, or Incomplete / Why It Matters / How to Validate / Who / When**. Add a tag or note on each merged row to indicate the item originated from persona work (e.g., "Source: Persona Maker - [Persona Name]"). This keeps the KB as the single source of truth for open validation items and prevents drift between a standalone persona validation guide and the KB's registry.
+When merging, use the KB's column structure: **Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date**. Add a tag or note on each merged row to indicate the item originated from persona work (e.g., "Source: Persona Maker - [Persona Name]"). This keeps the KB as the single source of truth for open validation items and prevents drift between a standalone persona validation guide and the KB's registry.
 
 If no KB exists yet, note in the Data Validation Guide output that these items should be merged into a KB Validation Registry if one is later created for this product.
 

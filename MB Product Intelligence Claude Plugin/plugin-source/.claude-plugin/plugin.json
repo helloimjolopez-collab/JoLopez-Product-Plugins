@@ -1,9 +1,0 @@
-{
-  "name": "mb-product-intelligence",
-  "version": "1.6.0",
-  "description": "Ministry Brands Product Intelligence Plugin. Three skills for product teams: the Knowledgebase Maker (builds a two-page product knowledgebase, a Knowledge Base Overview dashboard plus a Knowledgebase deep reference, from a guided interview and live product walkthrough; both deliverables are delivered as Confluence-paste-ready markdown), the Knowledgebase Assistant (helps you query, update, audit, and walk KB Integrity against specific tasks), and the Persona Maker (creates data-informed user personas with gap analysis and validation guides). All KBs save to the MB Design Ops Confluence template at https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview.",
-  "skills": "./skills/",
-  "author": {
-    "name": "Ministry Brands Product Team"
-  }
-}

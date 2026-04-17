@@ -27,13 +27,13 @@ This process involves a deep one-on-one conversation with a product owner or pro
 
 The Knowledge Base Overview is the one-page dashboard. It holds:
 
-- Product Overview table (including Platform URL, environments, Core User Flow links, Customer Journey Map links, Service Blueprint links, Pendo Dashboard link, Figma links)
-- Key Stakeholders (broken out by role)
-- Business Context (customers, revenue, pricing, competitors, TAM)
-- Integrations & Third Parties
-- Product Initiatives (three tables: In Progress, Planned, Recently Complete)
+- **Product Overview table** (15 required rows, always present: Product Name(s), Product Modality, Status, Platform URL, Testing Environment URL, Point of Contact for Testing Environment Credentials, Integrated Partners, Backend or Third-Party Systems, Total Customers, Yearly Revenue / ARR, TAM, Relevant Competitors, Customer Journey Map Links, Service Blueprint Links, Core User Flows (Links). Optional additional rows: Pricing Model, Key Differentiator, Main Personas, Pendo Dashboard, Figma Links, Other Relevant Resources.)
+- **Team** (7 required rows, always present: VP, Dev Director, Dev Manager, Product Manager, Product Designers, Engineers, QA)
+- **Key Stakeholders** (5 required roles, always present: Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders)
+- **Knowledgebase Integrity** (prominent trust layer right after Team & Stakeholders; every unvalidated claim, flagged gap, or maintenance to-do with Name, Description, Urgency/Importance, Assigned To, Status, Date Flagged, Target Resolution Date)
+- Integrations & Third Parties (detailed breakdown of host integrations, product integrations, backend systems)
+- Product Initiatives (three tables: In Progress, Planned, Recently Completed)
 - Discovery Backlog (one table with a status column)
-- KB Integrity (the trust layer: unvalidated claims, flagged gaps, maintenance to-dos, each with a status)
 
 The Knowledgebase is the deep reference. It holds:
 
@@ -57,15 +57,15 @@ The Knowledgebase is the deep reference. It holds:
 
 Before asking a single question, set expectations clearly:
 
-> "Let's build a complete knowledgebase for this product together. It has two parts: a Knowledge Base Overview page (a scannable dashboard for teams, stakeholders, initiatives, discovery, integrations, business context, and known gaps) and a Knowledgebase page (the deep technical reference for architecture, features, flows, challenges, personas, terminology, and risks). I'll ask you a structured set of questions. Some answers will be detailed, take your time. As we go I'll also track anything that needs validation, meaning places where we're working from estimates or instinct rather than hard data. That's normal. Everything flagged goes into the KB Integrity table on the Knowledge Base Overview with a status so you can see what's trustworthy and what needs confirming. This usually takes 20 to 40 minutes for the interview, then I'll explore the product environment and assemble both documents. Ready?"
+> "Let's build a complete knowledgebase for this product together. It has two parts: a Knowledge Base Overview page (a scannable dashboard for teams, stakeholders, initiatives, discovery, integrations, business context, and known gaps) and a Knowledgebase page (the deep technical reference for architecture, features, flows, challenges, personas, terminology, and risks). I'll ask you a structured set of questions. Some answers will be detailed, take your time. As we go I'll also track anything that needs validation, meaning places where we're working from estimates or instinct rather than hard data. That's normal. Everything flagged goes into the Knowledgebase Integrity table on the Knowledge Base Overview with a status so you can see what's trustworthy and what needs confirming. This usually takes 20 to 40 minutes for the interview, then I'll explore the product environment and assemble both documents. Ready?"
 
 ### Interview Approach
 
 Ask questions one at a time or in small related clusters (2 to 3 max). Do not dump the whole list. Let the conversation breathe. If a short answer deserves depth, follow up. If the user says "I don't know" or "not applicable", note it and move on.
 
-### KB Integrity Tracking (Your Most Important Background Task)
+### Knowledgebase Integrity Tracking (Your Most Important Background Task)
 
-Throughout the interview, build a running KB Integrity list. Every claim or data point that lacks a confirmed source becomes a row in the Knowledge Base Overview KB Integrity table, with a status of "Not Started" by default. This happens in real time as the user talks.
+Throughout the interview, build a running Knowledgebase Integrity list. Every claim or data point that lacks a confirmed source becomes a row in the Knowledge Base Overview Knowledgebase Integrity table, with a status of "Open" by default. This happens in real time as the user talks.
 
 **What to flag:**
 
@@ -75,11 +75,11 @@ Throughout the interview, build a running KB Integrity list. Every claim or data
 - **Estimated metrics** (revenue, customer counts, usage percentages given as rough guesses).
 - **Inherited knowledge** ("That's how it's always worked"). The original reasoning may be lost.
 - **Your own assumptions** (if you infer something from product exploration, flag it too).
-- **Missing artifacts** (if a core user flow has no Figma or Lucid or HTML artifact yet, that is a KB Integrity row).
+- **Missing artifacts** (if a core user flow has no Figma or Lucid or HTML artifact yet, that is a Knowledgebase Integrity row).
 
-When probing, be warm, not interrogating. Reassure the user that rough data is normal and that everything flagged gets a concrete action in the KB Integrity table.
+When probing, be warm, not interrogating. Reassure the user that rough data is normal and that everything flagged gets a concrete action in the Knowledgebase Integrity table.
 
-Keep the list running silently during the interview. Do not announce each flag. Surface the full KB Integrity table at the end along with proposed "How to Validate", "Who", "When", and "Status" values for each row.
+Keep the list running silently during the interview. Do not announce each flag. Surface the full Knowledgebase Integrity table at the end along with proposed "How to Validate", "Who", "When", and "Status" values for each row.
 
 ### The Question Bank
 
@@ -94,8 +94,8 @@ Work through these categories in order. Read `references/question-bank.md` for t
 
 **2. Team & Ownership**
 
-- Product Manager, Product Designer, Dev Director, Dev Manager, QA, Devs (names and affiliations)
-- Key Stakeholders broken out by role (not as an open-ended question): Customer Success lead, Relationship Manager, Sales Lead, Compliance / Legal contact, Integration / Dev Partner contacts, Executive sponsor. For any role that does not apply, confirm "N/A" rather than leaving blank.
+- **Team** (7 required roles, captured in the Knowledge Base Overview Team table): VP, Dev Director, Dev Manager, Product Manager, Product Designers (plural: capture every designer on the team), Engineers (names and affiliations, e.g., "Falgun Gachi (Hexaware), Divyang Patel (Hexaware), Donnacha Connolly"), QA.
+- **Key Stakeholders** (5 required roles, captured in the Knowledge Base Overview Key Stakeholders table): Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders (one row per partner, name + org + why relevant, e.g., "Dmitri Volkov, Rock Developer Partner, integration contact"). For any role that does not apply, confirm "N/A" rather than leaving blank.
 - Team size by discipline
 
 **3. Architecture & Technical Context**
@@ -109,13 +109,14 @@ Work through these categories in order. Read `references/question-bank.md` for t
 
 **4. Environments & Access**
 
-- **Platform URL for audits (REQUIRED, non-optional).** The one URL any future auditor should use to explore this product. If the user cannot provide it, block KB generation and explain why.
-- Production URL (if applicable)
-- Staging / test URL and credentials
+- **Platform URL (REQUIRED, non-optional).** The production URL any future auditor should use to explore this product. If the user cannot provide it, block KB generation and explain why.
+- **Testing Environment URL.** The canonical test or staging URL used for audits and walkthroughs. Required in the Product Overview table.
+- **Point of Contact for Testing Environment Credentials.** Specific person (name + role) who grants access to the test/staging environment. Not a team alias. Required in the Product Overview table.
 - Figma links, design system links
 - UX backlog or product backlog links
 - PRD / spec / wiki links
-- Customer Journey Maps and Service Blueprints (links if any exist)
+- Customer Journey Map links (required in Product Overview)
+- Service Blueprint links (required in Product Overview)
 - Pendo Dashboard link
 
 **5. Business Context**
@@ -138,7 +139,7 @@ Work through these categories in order. Read `references/question-bank.md` for t
 **8. Core User Flows**
 
 - The 3 to 5 flows users do most often
-- **For each flow: is there an existing artifact (Figma, Lucid, interactive HTML)?** If yes, capture the link. If no, this is a KB Integrity row ("Flow [name] has no artifact yet").
+- **For each flow: is there an existing artifact (Figma, Lucid, interactive HTML)?** If yes, capture the link. If no, this is a Knowledgebase Integrity row ("Flow [name] has no artifact yet").
 
 **9. Current Challenges**
 
@@ -152,7 +153,7 @@ Work through these categories in order. Read `references/question-bank.md` for t
 
 - **In Progress** initiatives (with status: In Design, Refining, Implementing, QA, Commercializing, Releasing)
 - **Planned** initiatives (with status: Discovering, Validating, Awaiting Approval)
-- **Recently Complete** (shipped in last ~6 months)
+- **Recently Completed** (shipped in last ~6 months)
 - For each: short description and linked docs (PRD, PIO, brief)
 
 **11. Discovery Backlog**
@@ -179,7 +180,7 @@ Briefly summarize back what you heard for confirmation. Keep summaries concise.
 
 ### Handling Missing Info
 
-If a user does not know something, mark it "TBD" in the document and add a KB Integrity row with a suggested validation path, who owns it, and when it should be resolved. Platform URL is the one field that cannot be TBD: without it, block KB generation.
+If a user does not know something, mark it "TBD" in the document and add a Knowledgebase Integrity row with a suggested validation path, who owns it, and when it should be resolved. Platform URL is the one field that cannot be TBD: without it, block KB generation.
 
 ---
 
@@ -193,7 +194,7 @@ For each major section of the product:
 
 - **Navigation structure** (sidebar, top nav, settings, menus)
 - **Dashboard / landing page** (what the user sees first)
-- **Core flows** end to end (every screen, field, button, decision point). Note: for the Knowledgebase Section 4, every flow needs a link to an actual flow artifact. If the product has no artifact for a flow, flag a KB Integrity row to create one.
+- **Core flows** end to end (every screen, field, button, decision point). Note: for the Knowledgebase Section 4, every flow needs a link to an actual flow artifact. If the product has no artifact for a flow, flag a Knowledgebase Integrity row to create one.
 - **Settings and configuration**
 - **Error states and edge cases**
 
@@ -206,7 +207,7 @@ Flag discrepancies between what the user told you and what you observed:
 - Flows that work differently than described
 - Pain points visible in the UI that the user did not mention
 
-Discrepancies become KB Integrity rows.
+Discrepancies become Knowledgebase Integrity rows.
 
 ### Taking Notes
 
@@ -222,15 +223,16 @@ Produce three deliverables.
 
 ### Deliverable 1: The Knowledge Base Overview (Markdown)
 
-This is the parent Confluence page, named "[Product Name] Knowledge Base Overview". Read `references/cover-page-template.md` for the exact template. It contains:
+This is the parent Confluence page, named "[Product Name] Knowledge Base Overview". Read `references/cover-page-template.md` for the exact template. It contains, in this order:
 
-1. **Product Overview table** (including Platform URL, environments, Core User Flow links, Customer Journey Map links, Service Blueprint links, Pendo Dashboard link, Figma links, status)
-2. **Key Stakeholders** (broken out by role in a sub-table)
-3. **Business Context** (customers, revenue, pricing, competitors, TAM)
+1. **Product Overview table** (15 required rows, always present: Product Name(s), Product Modality, Status, Platform URL, Testing Environment URL, Point of Contact for Testing Environment Credentials, Integrated Partners, Backend or Third-Party Systems, Total Customers, Yearly Revenue / ARR, TAM, Relevant Competitors, Customer Journey Map Links, Service Blueprint Links, Core User Flows (Links). Plus optional rows: Pricing Model, Key Differentiator, Main Personas, Pendo Dashboard, Figma Links, Other Relevant Resources.)
+2. **Team & Stakeholders** (two sub-tables):
+   - **Team** (7 required rows: VP, Dev Director, Dev Manager, Product Manager, Product Designers, Engineers, QA)
+   - **Key Stakeholders** (5 required roles: Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders)
+3. **Knowledgebase Integrity** (prominent, right after Team & Stakeholders; one table with Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date. Status values: Open, Planned, In Progress, Resolved.)
 4. **Integrations & Third Parties** (host integrations, product integrations, backend systems)
-5. **Product Initiatives** (three tables: In Progress, Planned, Recently Complete, each with Name / Short Description / Linked Docs / Status)
+5. **Product Initiatives** (three tables: In Progress, Planned, Recently Completed, each with Name / Short Description / Linked Docs / Status)
 6. **Discovery Backlog** (one table with Name / Short Description / Linked Docs / Status)
-7. **KB Integrity** (one table with Item / What's Missing / Why It Matters / How to Validate / Who / When / Status)
 
 Save as `[Product Name] Knowledge Base Overview.md`. This is what gets pasted into the parent Confluence page.
 
@@ -261,7 +263,7 @@ Save as `[Product Name] Knowledgebase.md`. This is what gets pasted into the chi
 - Discovery Backlog
 - Integrations & Third Parties
 - Business Context
-- Validation Registry / KB Integrity
+- Validation Registry / Knowledgebase Integrity
 - Environment URLs and resource links
 
 If during generation you find yourself writing about any of the above, stop and move it to the Knowledge Base Overview instead.
@@ -279,7 +281,7 @@ Where the Knowledgebase contains an unvalidated claim, add an inline flag:
 
 > **Needs Validation** - [brief note on what needs checking]
 
-Every inline flag must have a corresponding row in the Knowledge Base Overview KB Integrity table with all columns filled (Item / What's Missing / Why It Matters / How to Validate / Who / When / Status).
+Every inline flag must have a corresponding row in the Knowledge Base Overview Knowledgebase Integrity table with all columns filled (Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date).
 
 Do not over-flag. Focus on claims that would change decisions if wrong.
 
@@ -300,13 +302,13 @@ This recommendation is non-negotiable and must appear every time the documents a
 
 ---
 
-## Phase 4: Present KB Integrity and Validation Guidance
+## Phase 4: Present Knowledgebase Integrity and Validation Guidance
 
-After generating the documents, present the user with the complete KB Integrity table.
+After generating the documents, present the user with the complete Knowledgebase Integrity table.
 
 ### Presenting the Table
 
-> "Here's the KB Integrity table. Every unvalidated claim, rough estimate, missing artifact, and data gap from our conversation lives here, each with a suggested How to Validate, a proposed Who, a suggested When, and a starting Status of 'Not Started'. This is completely normal. No product owner has hard data for everything. The documents are solid as working references. Would you like to walk through these rows together and confirm owners and dates, or resolve any of them now?"
+> "Here's the Knowledgebase Integrity table. Every unvalidated claim, rough estimate, missing artifact, and data gap from our conversation lives here, each with a Name, Description, Urgency or Importance, a proposed Assigned To, a Date Flagged, a Target Resolution Date, and a starting Status of 'Open'. This is completely normal. No product owner has hard data for everything. The documents are solid as working references. Would you like to walk through these rows together and confirm owners and dates, or resolve any of them now?"
 
 ### If They Want Validation Guidance
 
@@ -332,9 +334,9 @@ If the validation requires user or stakeholder interviews, provide an interview 
 
 When writing validation guidance, always reference the specific tool. Do not say "check the analytics". Say "pull a Pendo report filtering by [specific feature / page] over the last [time period] and look at [specific metric]".
 
-### The KB Integrity Table in the Document
+### The Knowledgebase Integrity Table in the Document
 
-The KB Integrity table lives on the Knowledge Base Overview. Its columns are: # / Item / What's Missing / Why It Matters / How to Validate / Who / When / Status. Every row must have all columns filled in. Status values: Not Started / In Progress / Blocked / Validated / Resolved.
+The Knowledgebase Integrity table lives on the Knowledge Base Overview, positioned prominently right after the Team & Stakeholders section so anyone consulting the KB (human or machine) sees gaps and assumptions before relying on it. Its columns are: Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date. Every row must have all columns filled in. Status values: Open / Planned / In Progress / Resolved.
 
 ---
 
@@ -342,9 +344,9 @@ The KB Integrity table lives on the Knowledge Base Overview. Its columns are: # 
 
 **User cannot provide Platform URL:** Block KB generation. Explain that without a Platform URL, no future audit can compare the KB to the live product. Ask them to pick the canonical test or reference environment URL before you go further.
 
-**User does not have test environment credentials:** Produce the KB from interview answers alone. Add a KB Integrity row: "Environment walkthrough pending", with Who and When set accordingly.
+**User does not have test environment credentials:** Produce the KB from interview answers alone. Add a Knowledgebase Integrity row: "Environment walkthrough pending", with Who and When set accordingly.
 
-**User wants to skip sections:** Produce what you can. Mark skipped sections as "Not captured, to be added" and add a KB Integrity row per skipped section.
+**User wants to skip sections:** Produce what you can. Mark skipped sections as "Not captured, to be added" and add a Knowledgebase Integrity row per skipped section.
 
 **Product is pre-launch, no live environment:** Focus on architecture, team, roadmap, and design artifacts (Figma). User flows can come from Figma or PRD descriptions instead of live exploration. Each flow still needs an artifact link in the Knowledgebase Section 4.
 
@@ -381,7 +383,7 @@ Tell the user:
 
 > "From here on, don't hand-edit the Confluence pages when things change. Use the **MB Product Knowledgebase Assistant** skill. Paste your current Knowledge Base Overview and Knowledgebase into a chat with the Assistant, tell it what changed, and it will give you back updated markdown ready to paste over the existing Confluence pages, with the template format intact. That keeps the structure consistent and makes cross-product audits work.
 >
-> The Assistant is also how you run freshness audits, walk the KB Integrity table against a specific task you're about to start (prototyping, PRD, sprint planning), or ask product questions grounded in the KB content."
+> The Assistant is also how you run freshness audits, walk the Knowledgebase Integrity table against a specific task you're about to start (prototyping, PRD, sprint planning), or ask product questions grounded in the KB content."
 
 ### How They Add Personas Later
 
