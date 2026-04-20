@@ -1,6 +1,6 @@
 # Individual Skills: MB Smart Product Wiki
 
-The three skills from the MB Smart Product Wiki plugin, each packaged as a standalone file so you can share one-at-a-time with a teammate without giving them the whole plugin.
+The four skills from the MB Smart Product Wiki plugin, each packaged as a standalone file so you can share one-at-a-time with a teammate without giving them the whole plugin.
 
 ## What's here
 
@@ -9,6 +9,7 @@ The three skills from the MB Smart Product Wiki plugin, each packaged as a stand
 | **MB Persona Maker** | [`mb-persona-maker.md`](./mb-persona-maker.md) | [`mb-persona-maker.zip`](./mb-persona-maker.zip) | **Send the `.md`**. This skill has no references folder, so the single file is complete. |
 | **MB Product Knowledgebase Assistant** | [`mb-product-knowledgebase-assistant.md`](./mb-product-knowledgebase-assistant.md) | [`mb-product-knowledgebase-assistant.zip`](./mb-product-knowledgebase-assistant.zip) | **Send the `.zip`**. This skill uses a `references/` folder that must be installed alongside it. |
 | **MB Product Knowledgebase Maker** | [`mb-product-knowledgebase-maker.md`](./mb-product-knowledgebase-maker.md) | [`mb-product-knowledgebase-maker.zip`](./mb-product-knowledgebase-maker.zip) | **Send the `.zip`**. Same reason, it has a `references/` folder. |
+| **MB User Flows Mapper** | [`mb-user-flows-mapper.md`](./mb-user-flows-mapper.md) | [`mb-user-flows-mapper.zip`](./mb-user-flows-mapper.zip) | **Send the `.zip`**. Uses a `references/` folder with 5 files (canonical template, lane model, Figma render scripts, interview guide, browser exploration). |
 
 ## How to give a skill to a teammate
 
@@ -39,7 +40,7 @@ The zip includes both the `.md` (which becomes the slash command) and the `refer
 
 ## Why references matter
 
-The Knowledgebase skills look up template files, reference schemas, and Confluence-template examples from a `references/` folder. Without it, the skills will fail with "reference file not found" errors. The zip exists specifically to keep the references bundled with the skill when sharing single skills.
+The Knowledgebase skills look up template files, reference schemas, and Confluence-template examples from a `references/` folder. The User Flows Mapper looks up the canonical Figma template spec, lane model, render scripts, interview guide, and browser exploration patterns from its own `references/` folder. Without these folders, the skills will fail with "reference file not found" errors. The zip exists specifically to keep the references bundled with the skill when sharing single skills.
 
 The Persona Maker skill doesn't have any reference files, so its `.md` alone is complete.
 

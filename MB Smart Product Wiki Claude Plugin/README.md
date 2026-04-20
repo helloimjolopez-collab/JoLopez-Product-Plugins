@@ -2,32 +2,33 @@
 
 > **NOT OPEN SOURCE. NOT FOR DOWNLOAD OR REDISTRIBUTION.** This plugin is proprietary. Do not download the zip, clone this repo, copy files, or share with colleagues. The only permitted install path is through the Claude Code marketplace, for users the author has authorized. See the [repo LICENSE](../LICENSE) for full terms.
 
-Ministry Brands Smart Product Wiki: three Claude Code skills for product teams. Builds and maintains product knowledgebases and user personas. The plugin produces paste-ready markdown; you paste it into your own Confluence page, duplicated from the [MB Design Ops reference template](https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview). Nothing is saved or published to Confluence automatically.
+Ministry Brands Smart Product Wiki: four Claude Code skills for product teams. Builds and maintains product knowledgebases, user personas, and customer journey maps. Most output is paste-ready markdown for your own Confluence page (duplicated from the [MB Design Ops reference template](https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview)). The User Flows Mapper writes directly into a new Figma file.
 
 ## What's in this folder
 
 | File / folder | What it is |
 |---|---|
-| **[`MB Smart Product Wiki Claude Plugin (Full).zip`](./MB%20Smart%20Product%20Wiki%20Claude%20Plugin%20%28Full%29.zip)** | The full plugin, all 3 skills. Download this and upload it to the Customize tab to get everything. |
+| **[`MB Smart Product Wiki Claude Plugin (Full).zip`](./MB%20Smart%20Product%20Wiki%20Claude%20Plugin%20%28Full%29.zip)** | The full plugin, all 4 skills. Download this and upload it to the Customize tab to get everything. |
 | [`plugin-source/`](./plugin-source/) | The unzipped contents of the zip above. Browse/edit here. |
-| [`Individual Skills/`](./Individual%20Skills/) | Each of the 3 skills as a single file, for sharing one-at-a-time with teammates. |
+| [`Individual Skills/`](./Individual%20Skills/) | Each of the 4 skills as a single file, for sharing one-at-a-time with teammates. |
 
-## The three skills in this plugin
+## The four skills in this plugin
 
 | Skill | What it does |
 |---|---|
 | **MB Product Knowledgebase Maker** | Builds a two-page product knowledgebase, a Knowledge Base Overview dashboard plus a deep Knowledgebase reference, from a guided interview and live product walkthrough. |
 | **MB Product Knowledgebase Assistant** | Your companion for using a product knowledgebase day-to-day. Helps you query, update, audit, and walk KB integrity against specific tasks. |
 | **MB Persona Maker** | Guides you through building useful, data-informed user personas with gap analysis and validation guides. Can read an existing knowledgebase to jumpstart persona creation. |
+| **MB User Flows Mapper** | Maps the core user flows of an existing product by exploring its testing or production environment. Walks the product via browser automation, interviews the user for off-product touchpoints (support, emails, backend, vendors), and renders each flow as a customer journey map in Figma with user actions, screens, storyboard, emotion curve, pain points, and opportunities. Does not create user flows from scratch. |
 
-All three are **safe for any product manager, designer, or researcher** to run.
+All four are **safe for any product manager, designer, or researcher** to run.
 
 ## Install the full plugin (for yourself)
 
 1. Download **`MB Smart Product Wiki Claude Plugin (Full).zip`** (the file in this folder).
 2. Open Claude Code → **Customize** → **Personal plugins**.
 3. Click the `+` button, select the zip.
-4. Done. All three skills are now available under `/mb-*` slash commands.
+4. Done. All four skills are now available under `/mb-*` slash commands.
 
 ## Share ONE skill with a teammate
 
@@ -64,6 +65,7 @@ cd ..
 cp plugin-source/skills/mb-persona-maker/SKILL.md                    "Individual Skills/mb-persona-maker.md"
 cp plugin-source/skills/mb-product-knowledgebase-assistant/SKILL.md  "Individual Skills/mb-product-knowledgebase-assistant.md"
 cp plugin-source/skills/mb-product-knowledgebase-maker/SKILL.md      "Individual Skills/mb-product-knowledgebase-maker.md"
+cp plugin-source/skills/mb-user-flows-mapper/SKILL.md                "Individual Skills/mb-user-flows-mapper.md"
 
 cd "Individual Skills"
 zip -q mb-persona-maker.zip mb-persona-maker.md
@@ -75,6 +77,10 @@ rm -rf references
 cp -R ../plugin-source/skills/mb-product-knowledgebase-maker/references .
 zip -q -r mb-product-knowledgebase-maker.zip mb-product-knowledgebase-maker.md references
 rm -rf references
+
+# User Flows Mapper: zip the full skill dir (SKILL.md + references) from plugin-source.
+rm -f mb-user-flows-mapper.zip
+(cd ../plugin-source/skills && zip -q -r "../../Individual Skills/mb-user-flows-mapper.zip" mb-user-flows-mapper)
 ```
 
 **Rule:** always edit `cover-page-template.md` and `kb-template.md` inside the **Maker's** `references/` folder. That is the canonical location. The Assistant's copies are regenerated by the mirror step above. Never edit the Assistant's copies directly, they will be overwritten.

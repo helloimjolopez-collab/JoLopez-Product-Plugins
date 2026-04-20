@@ -1,7 +1,7 @@
 {
   "name": "mb-smart-product-wiki",
-  "version": "1.10.2",
-  "description": "Ministry Brands Smart Product Wiki. Three skills for product teams: the Knowledgebase Maker (builds a complete product knowledgebase from a guided interview), the Knowledgebase Assistant (your day-to-day companion for querying, updating, auditing, and prepping your knowledgebase before any task), and the Persona Maker (creates data-informed user personas with gap analysis and a concrete validation plan).",
+  "version": "1.11.0",
+  "description": "Ministry Brands Smart Product Wiki. Four skills for product teams: the Knowledgebase Maker (builds a complete product knowledgebase from a guided interview), the Knowledgebase Assistant (your day-to-day companion for querying, updating, auditing, and prepping your knowledgebase before any task), the Persona Maker (creates data-informed user personas with gap analysis and a concrete validation plan), and the User Flows Mapper (maps the core user flows of an existing product by exploring its testing or production environment and rendering each flow as a customer journey map in Figma).",
   "skills": "./skills/",
   "author": {
     "name": "Ministry Brands Product Team"

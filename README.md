@@ -14,7 +14,7 @@ This repo is the public home of the **MB Smart Product Wiki** Claude Code plugin
 
 | Folder | Plugin | What it does |
 |---|---|---|
-| [`MB Smart Product Wiki Claude Plugin/`](./MB%20Smart%20Product%20Wiki%20Claude%20Plugin/) | MB Smart Product Wiki | Three skills for product teams: a Knowledgebase Maker (builds a product knowledgebase from a guided interview plus a live walkthrough), a Knowledgebase Assistant (helps you query, update, and audit your KB), and a Persona Maker (builds data-informed user personas). |
+| [`MB Smart Product Wiki Claude Plugin/`](./MB%20Smart%20Product%20Wiki%20Claude%20Plugin/) | MB Smart Product Wiki | Four skills for product teams: a Knowledgebase Maker (builds a product knowledgebase from a guided interview plus a live walkthrough), a Knowledgebase Assistant (helps you query, update, and audit your KB), a Persona Maker (builds data-informed user personas), and a User Flows Mapper (maps the core user flows of an existing product and renders each as a customer journey map in Figma). |
 
 The Pathway Design System plugin previously lived in this repo. It has moved to its own **private** repository at `helloimjolopez-collab/pathway-design-system-claude-plugin` and is no longer part of this marketplace.
 
