@@ -1,5 +1,13 @@
 # Jo's Claude plugins
 
+> **NOT OPEN SOURCE. NOT FOR DOWNLOAD. NOT FOR REDISTRIBUTION.**
+>
+> This repository is public only because the Claude Code marketplace install mechanism requires it. You are NOT permitted to download, clone, fork, copy, redistribute, or mirror the contents, whether as a ZIP, via `git clone`, raw file URLs, or any other means. The only legitimate way to use these plugins is to install them through the Claude Code marketplace, as invoked automatically by the Claude Code client on authorized users' behalf.
+>
+> This rule applies to everyone, including colleagues at Ministry Brands.
+>
+> For permission to use the Work in any other way, contact Jo Lopez (jo.lopez@ministrybrands.com). See [LICENSE](./LICENSE) for the full terms.
+
 This repo is my collection of Claude Code plugins. Each plugin lives in its own folder at the root of this repo.
 
 ## What's in here
@@ -11,20 +19,9 @@ This repo is my collection of Claude Code plugins. Each plugin lives in its own 
 
 More plugins will be added as I build them.
 
-## How to install a plugin
+## How to install a plugin (authorized users only)
 
-Every plugin folder has its own `README.md` with specific instructions, but the short version is the same for all of them:
-
-1. Open the plugin's folder
-2. Download the `.zip` labelled as the full plugin
-3. In Claude Code: **Customize** → **Personal plugins** → click `+` → upload the zip
-4. Done — the plugin appears in your Customize tab with its skills available as `/` commands
-
-## How to share ONE skill with a teammate
-
-Each plugin folder has an `Individual Skills/` subfolder with every skill as a single `.md` file (and a `.zip` of it). Send the `.md` (or the `.zip` when the skill has a `references/` folder) to a teammate; they drop it into `~/.claude/commands/` on their Mac and it becomes a slash command.
-
-The plugin's own README tells you which file to send for each skill — some skills are complete as a single `.md`, others need the zipped version because they ship with supporting files.
+Installation is through the Claude Code marketplace. If the author has authorized you and provided the marketplace reference, use it through Claude Code directly. Every plugin folder has its own `README.md` with specific instructions for the author's own reference. Direct download of zips or individual files from this repo is NOT a permitted install path and is covered by the prohibition in the [LICENSE](./LICENSE).
 
 ## Folder structure convention
 

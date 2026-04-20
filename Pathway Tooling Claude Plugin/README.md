@@ -1,5 +1,7 @@
 # Pathway Tooling Claude Plugin
 
+> **NOT OPEN SOURCE. NOT FOR DOWNLOAD OR REDISTRIBUTION.** This plugin is proprietary. Do not download the zip, clone this repo, copy files, or share with colleagues. The only permitted install path is through the Claude Code marketplace, for users the author has authorized. See the [repo LICENSE](../LICENSE) for full terms.
+
 The Pathway Design System tooling for Ministry Brands Amplify. Five Claude Code skills that cover the full component lifecycle.
 
 ## What's in this folder

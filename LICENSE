@@ -1,0 +1,78 @@
+Copyright (c) 2026 Jo Lopez. All Rights Reserved.
+
+This repository and its contents, including but not limited to source code,
+documentation, configuration files, templates, reference files, skill files,
+and any zipped artifacts (collectively, the "Work"), are the proprietary
+property of the author and are NOT open source.
+
+PURPOSE OF PUBLICATION
+
+The Work is published to GitHub for one reason only: to enable installation
+of the included Claude Code plugin(s) through the Claude Code marketplace
+mechanism, as invoked automatically by the Claude Code client on behalf of
+users explicitly authorized by the author. No other use is granted or implied.
+
+PROHIBITED USES
+
+You MAY NOT, without the prior written permission of the author:
+
+1. Download, clone, fork, or otherwise copy this repository or any part of
+   it, whether via GitHub's "Download ZIP" function, "git clone", raw file
+   URLs, browser "Save As", screen scraping, the GitHub API, or any other
+   means. The only download mechanism permitted is the one the Claude Code
+   client uses automatically when a plugin is installed via the marketplace.
+
+2. Redistribute the Work, or any part of it, in original or modified form,
+   through any channel, public or private, including but not limited to:
+   GitHub repositories, package registries, file shares, email attachments,
+   Slack or other messaging platforms, Confluence or other wikis, AirDrop,
+   cloud storage links, or physical media.
+
+3. Host, mirror, republish, or rehost the Work on any repository, registry,
+   or distribution platform, public or private.
+
+4. Create derivative works based on the Work, including forks on GitHub or
+   elsewhere.
+
+5. Use the Work, in whole or in part, in any commercial, internal-business,
+   educational, or personal context other than through the specific Claude
+   Code marketplace install flow the author has sanctioned.
+
+6. Remove, alter, obscure, or fail to carry forward this license, any
+   copyright notice, or any attribution, in any copy or reference to the
+   Work.
+
+APPLICABILITY
+
+This license applies to everyone, without exception. This includes, but is
+not limited to, colleagues of the author, employees, contractors, interns,
+partners, and subcontractors of the author's organization (Ministry Brands),
+as well as any third party anywhere in the world. Working for the same
+organization as the author does NOT grant any additional rights to the Work
+and does NOT waive any restriction above.
+
+PUBLIC VISIBILITY IS NOT A GRANT OF LICENSE
+
+The fact that this repository is publicly visible on GitHub is a technical
+consequence of the marketplace install mechanism, not a grant of any right.
+Public visibility does NOT imply permission to download, clone, fork, copy,
+use, redistribute, or modify the Work.
+
+REQUESTING PERMISSION
+
+To request permission for any use not covered above, contact the author:
+
+    Jo Lopez
+    jo.lopez@ministrybrands.com
+
+Any permission granted is revocable at the author's sole discretion and is
+limited to the specific use and timeframe the author specifies in writing.
+
+NO WARRANTY
+
+The Work is provided "AS IS", without warranty of any kind, express or
+implied, including but not limited to the warranties of merchantability,
+fitness for a particular purpose, and noninfringement. In no event shall the
+author be liable for any claim, damages, or other liability, whether in an
+action of contract, tort, or otherwise, arising from, out of, or in
+connection with the Work or the use or other dealings in the Work.
