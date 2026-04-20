@@ -2,7 +2,7 @@
 
 > **NOT OPEN SOURCE. NOT FOR DOWNLOAD OR REDISTRIBUTION.** This plugin is proprietary. Do not download the zip, clone this repo, copy files, or share with colleagues. The only permitted install path is through the Claude Code marketplace, for users the author has authorized. See the [repo LICENSE](../LICENSE) for full terms.
 
-Ministry Brands Smart Product Wiki: three Claude Code skills for product teams. Builds and maintains product knowledgebases and user personas. All knowledgebases save to the [MB Design Ops Confluence template](https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview).
+Ministry Brands Smart Product Wiki: three Claude Code skills for product teams. Builds and maintains product knowledgebases and user personas. The plugin produces paste-ready markdown; you paste it into your own Confluence page, duplicated from the [MB Design Ops reference template](https://ministrybrands.atlassian.net/wiki/spaces/DR/pages/6534463521/Product+Name+Knowledge+Base+Overview). Nothing is saved or published to Confluence automatically.
 
 ## What's in this folder
 
