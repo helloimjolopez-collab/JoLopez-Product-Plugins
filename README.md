@@ -8,16 +8,15 @@
 >
 > For permission to use the Work in any other way, contact Jo Lopez (jo.lopez@ministrybrands.com). See [LICENSE](./LICENSE) for the full terms.
 
-This repo is my collection of Claude Code plugins. Each plugin lives in its own folder at the root of this repo.
+This repo is the public home of the **MB Smart Product Wiki** Claude Code plugin.
 
 ## What's in here
 
 | Folder | Plugin | What it does |
 |---|---|---|
-| [`Pathway Tooling Claude Plugin/`](./Pathway%20Tooling%20Claude%20Plugin/) | Pathway | Five skills for the Pathway Design System (Ministry Brands Amplify). Covers the full lifecycle of a component — from Figma handoff check through to a shipped component in GitHub and Storybook. |
-| [`MB Smart Product Wiki Claude Plugin/`](./MB%20Smart%20Product%20Wiki%20Claude%20Plugin/) | MB Smart Product Wiki | Three skills for product teams — a Knowledgebase Maker (builds a product knowledgebase from a guided interview + live walkthrough), a Knowledgebase Assistant (helps you query, update, and audit your KB), and a Persona Maker (builds data-informed user personas). |
+| [`MB Smart Product Wiki Claude Plugin/`](./MB%20Smart%20Product%20Wiki%20Claude%20Plugin/) | MB Smart Product Wiki | Three skills for product teams: a Knowledgebase Maker (builds a product knowledgebase from a guided interview plus a live walkthrough), a Knowledgebase Assistant (helps you query, update, and audit your KB), and a Persona Maker (builds data-informed user personas). |
 
-More plugins will be added as I build them.
+The Pathway Design System plugin previously lived in this repo. It has moved to its own **private** repository at `helloimjolopez-collab/pathway-design-system-claude-plugin` and is no longer part of this marketplace.
 
 ## How to install a plugin (authorized users only)
 

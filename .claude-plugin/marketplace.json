@@ -4,13 +4,8 @@
     "name": "Jo Lopez",
     "email": "jo.lopez@ministrybrands.com"
   },
-  "description": "Jo Lopez's Claude Code plugins and skills. Each plugin lives in its own folder at the root of this repo.",
+  "description": "Jo Lopez's public Claude Code plugin marketplace. Currently hosts the MB Smart Product Wiki plugin. Proprietary, not for redistribution.",
   "plugins": [
-    {
-      "name": "pathway",
-      "source": "./Pathway Tooling Claude Plugin/plugin-source",
-      "description": "The Pathway Design System tooling plugin. Five skills covering the full lifecycle of an Amplify component, from Figma handoff check through to a shipped component in GitHub and Storybook."
-    },
     {
       "name": "mb-smart-product-wiki",
       "source": "./MB Smart Product Wiki Claude Plugin/plugin-source",
