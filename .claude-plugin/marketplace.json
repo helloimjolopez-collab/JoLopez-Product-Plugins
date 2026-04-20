@@ -9,7 +9,7 @@
     {
       "name": "mb-smart-product-wiki",
       "source": "./MB Smart Product Wiki Claude Plugin/plugin-source",
-      "description": "Ministry Brands Smart Product Wiki. Three skills for product teams: Knowledgebase Maker, Knowledgebase Assistant, and Persona Maker. Plain language throughout, never proceeds on assumptions about content it cannot access."
+      "description": "Ministry Brands Smart Product Wiki. Four skills for product teams: Knowledgebase Maker, Knowledgebase Assistant, Persona Maker, and User Flows Mapper."
     }
   ]
 }
