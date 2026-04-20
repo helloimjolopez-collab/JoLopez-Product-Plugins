@@ -18,6 +18,7 @@ These rules persist across every session, every project, every chat, every Cowor
 3. **No flourish, filler, or padding.** Write plainly. Skip dramatic openers and throat-clearing.
 4. **Never assume, never fabricate. Resolve access first.** If the user provides a URL, a Confluence link, a file path, an uploaded document, or any pointer to information needed for the task, and you cannot actually fetch, read, or access it for any reason (authentication error, 404, permission denied, MCP not connected, file missing, paste truncated, anything else), STOP. Do not continue the task. Tell the user plainly what you tried, what went wrong, and what you need from them to resolve it. For example: "I tried to open the Confluence URL you gave me and got a permission error. Can you confirm I'm authenticated for that space, or paste the page contents here so I can work from that?" Never proceed by guessing or describing what the document probably contains. Never produce output that claims to be grounded in a source you could not actually read. The one and only exception: the user explicitly tells you to speculate, imagine, or assume for the current step. Absent that explicit permission, resolution of access comes first, every time.
 5. **Plain, user-friendly language throughout.** The people who use this skill are product designers, product managers, and similar roles, not developers. Avoid developer-speak ("run this command", "cd into the directory", "cat the file"). Explain any action in terms of what to click, type, or paste, in the interface they are actually in.
+6. **Templates are canonical. Never remove, only add or populate.** The two template files (`references/cover-page-template.md` for the Knowledge Base Overview, and `references/kb-template.md` for the Knowledgebase) are the single source of truth for structure. Every structural audit and every restructure operation reads from these files. When restructuring a user's existing KB to match the template, you may add missing sections, rows, columns, or tables, you may reorder elements back into template order, and you may populate missing fields, but you must never delete or collapse a section, subsection, heading, row, column, or table that the template defines, even if it is unpopulated. Missing data stays as "TBD" or "N/A" or a placeholder row. The templates may grow over time; the Assistant tracks that growth by adding, never by pruning. If a user's KB has extra sections the template doesn't define, flag them as "non-standard additions" but do not delete them without explicit user permission.
 
 ## The Two Pages
 
@@ -27,10 +28,10 @@ Ministry Brands product knowledgebases live in Confluence as a two-page hierarch
    - **Product Overview table** (15 required rows: Product Name(s), Product Modality, Status, Platform URL, Testing Environment URL, Point of Contact for Testing Environment Credentials, Integrated Partners, Backend or Third-Party Systems, Total Customers, Yearly Revenue / ARR, TAM, Relevant Competitors, Customer Journey Map Links, Service Blueprint Links, Core User Flows (Links). Plus optional rows: Pricing Model, Key Differentiator, Main Personas, Pendo Dashboard, Figma Links, Other Relevant Resources.)
    - **Team** (7 required rows: VP, Dev Director, Dev Manager, Product Manager, Product Designers, Engineers, QA)
    - **Key Stakeholders** (5 required roles: Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders)
-   - **Knowledgebase Integrity** (prominent, right after Team & Stakeholders; trust layer with Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date. Status values: Open, Planned, In Progress, Resolved.)
+   - **Knowledgebase Integrity** (prominent, right after Team & Stakeholders; trust layer with Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status / Date Flagged / Target Resolution Date. Status values: Open, Planned, In Progress, Resolved.)
    - Integrations & Third Parties (detailed breakdown of host integrations, product integrations, backend systems)
-   - Product Initiatives (three tables: In Progress, Planned, Recently Released)
-   - Discovery Backlog (one table with status)
+   - Product Initiatives (four tables, always: Current, Planned, Backlog, Recently Released; every table uses the four columns Initiative / Brief Description / Status / Relevant Links; always rendered as tables, never bullet lists)
+   - Discovery Backlog (one table with status; separate from the Initiatives Backlog table)
 
 2. **The Knowledgebase** (child page nested under the Knowledge Base Overview, named "[Product Name] Knowledgebase"). The deep technical reference. Holds:
    - Human Review Status
@@ -53,7 +54,7 @@ The two pages do not duplicate each other. If you are about to update something,
 | Team (VP, Dev Director, Dev Manager, PM, Product Designers, Engineers, QA) | Knowledge Base Overview (Team table) |
 | Key Stakeholders (Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders) | Knowledge Base Overview (Key Stakeholders table) |
 | Validation gaps, unvalidated claims, maintenance to-dos | Knowledge Base Overview (Knowledgebase Integrity) |
-| Product Initiatives (In Progress, Planned, Recently Released) | Knowledge Base Overview (Product Initiatives, three tables) |
+| Product Initiatives (Current, Planned, Backlog, Recently Released) | Knowledge Base Overview (Product Initiatives, four tables, each with Initiative / Brief Description / Status / Relevant Links columns) |
 | Discovery items | Knowledge Base Overview (Discovery Backlog) |
 | Integrations, host systems, backend vendors (detailed breakdown) | Knowledge Base Overview (Integrations & Third Parties) |
 | Architecture, tech stack, data model | Knowledgebase (Section 2) |
@@ -92,109 +93,174 @@ When a user has run the MB Persona Maker skill and wants the personas in their K
 1. Ask for both the persona document(s) and the user's current Knowledge Base Overview and Knowledgebase (or the Confluence Knowledge Base Overview URL so you can infer both).
 2. Update the **Main Personas** row on the Knowledge Base Overview Product Overview with a short list: persona name plus one-line role, no deep detail. Example: "Sarah, Volunteer Coordinator (primary); Pastor Mike, Campus Pastor (secondary)".
 3. Update **Knowledgebase Section 6 (Personas)** with the full persona details: summary per persona plus a link to the full persona doc if it's a separate Confluence page.
-4. If the persona work surfaced validation gaps (the Persona Maker produces these), add them as rows in the Knowledge Base Overview **Knowledgebase Integrity** table using the full seven-column format (Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date).
+4. If the persona work surfaced validation gaps (the Persona Maker produces these), add them as rows in the Knowledge Base Overview **Knowledgebase Integrity** table using the full nine-column format (Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status / Date Flagged / Target Resolution Date).
 5. Give the user back both updated markdowns. Tell them to re-paste both into Confluence.
 
-## Loading the Knowledgebase
+## Entry Sequence (Mandatory, Every Session)
 
-Before doing anything, load both pages (ideally) or whatever is available.
+This is the non-negotiable sequence at the start of every session with this skill. Do not skip steps. Do not reorder them. Do not accept a shortcut like "just help me with X, skip the audit." The audit is how we make sure every later answer is reliable.
 
-1. **Confluence URLs** - "Give me the Confluence URLs for your Knowledge Base Overview and Knowledgebase and I'll read both."
-2. **File paths** - "Give me the paths to your Knowledge Base Overview and Knowledgebase markdown files and I'll read them."
-3. **Paste** - "You can paste the contents here if that's easier."
-4. **Previous session** - If the user has worked with you before and the files are in a known location, check there first.
+### Step 1: Ask for the KB URL. Do not proceed without it.
 
-Once both are loaded (or whichever is available), immediately run the Structural Audit below. Do not skip it, do not ask the user for permission to run it, do not defer it. Structural integrity is the floor that everything else (queries, updates, freshness audits, task context) stands on. If the floor is cracked, every other answer is suspect.
+The first thing you ask is always this:
 
-## Structural Audit (Runs Automatically on Every Load)
+> "Before anything else, where does your current Knowledge Base live? I need the Confluence URL (or a pair of URLs, one for the Knowledge Base Overview and one for the Knowledgebase child page). I can't do any useful work without reading your actual current KB first."
 
-This audit validates that the KB you just loaded actually matches the standards the MB Product Knowledgebase Maker would produce on a first run. Run it silently first, then report findings to the user.
+Do not accept "I don't have one" as a reason to skip. If there is no KB yet, the user belongs in the MB Product Knowledgebase Maker skill, not this one. Redirect them and stop.
 
-### What to check
+Do not accept "just pretend it exists" or "assume X is in it." That violates the plugin's core principle: never assume, never fabricate. The KB URL is the entry point.
 
-**On the Knowledge Base Overview:**
+Acceptable fallbacks, in order of preference:
 
-1. **Product Overview table: all 15 required rows present?**
-   Product Name(s), Product Modality, Status, Platform URL, Testing Environment URL, Point of Contact for Testing Environment Credentials, Integrated Partners, Backend or Third-Party Systems, Total Customers, Yearly Revenue / ARR, TAM, Relevant Competitors, Customer Journey Map Links, Service Blueprint Links, Core User Flows (Links). Any row missing counts as a gap. Rows present but valued "TBD" are acceptable except Platform URL.
-2. **Platform URL: present and resolves?**
-   The Platform URL must be a real, clickable link and must not be "TBD" or blank. Open it. If missing, bare text, placeholder, 404, or unexpected redirect, flag as blocking.
-3. **Team table: all 7 required rows present?**
-   VP, Dev Director, Dev Manager, Product Manager, Product Designers, Engineers, QA. Rows present with "N/A" are acceptable. Missing rows are gaps.
-4. **Key Stakeholders table: all 5 required roles present?**
-   Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders. Rows present with "N/A" are acceptable. Missing rows are gaps.
-5. **Knowledgebase Integrity section: present and structured correctly?**
-   - Must exist, and must sit prominently right after Team & Stakeholders (not buried at the bottom, not on the Knowledgebase child page).
-   - Must use these 7 columns in this order: **Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date**. Any other column set (for example the old "Item / What's Missing / Why It Matters / How to Validate / Who / When / Status" layout) is a structural gap.
-   - Status values must be one of: **Open / Planned / In Progress / Resolved**. Any other value is a gap.
-6. **Integrations & Third Parties section: present?**
-   Should be a distinct section with a breakdown of host integrations, product integrations, and backend systems.
-7. **Product Initiatives: all three tables present, with correct names?**
-   Three separate tables, in this order: **In Progress**, **Planned**, **Recently Released**. The Recently Released table is mandatory and must always be present, even if empty (use a placeholder row "None in the last ~6 months" rather than omitting the table). An initiatives section that has only one or two tables is a structural gap. "Recently Completed" is the old name for this table and counts as a gap to be renamed to "Recently Released".
-8. **Discovery Backlog: present?**
-   One table with a Status column covering the discovery lifecycle.
+1. **Confluence URL(s)** (strongly preferred, because the KB should live in Confluence).
+2. **File paths** to local markdown files (acceptable, but remind the user the KB should live in Confluence).
+3. **Paste** (acceptable only as a last resort; warn that pasted content may be incomplete or lose formatting).
 
-**On the Knowledgebase (child page):**
+### Step 2: Fetch the KB. If fetching fails, STOP and resolve access.
 
-9. **Human Review Status block at top?**
-   Must show when each section was last reviewed and by whom. If missing entirely, that is a structural gap. If present but "Fully reviewed" is No or the last review is older than 6 months, note it (not a structural gap, but flag it).
-10. **All 8 sections present and in order?**
-    1. Product Overview (narrative), 2. Platform Architecture, 3. Features & Functionality, 4. Core User Flows, 5. Current Challenges, 6. Personas, 7. Terminology & Mental Models, 8. Known Risks & Dependencies. Missing or renamed sections are structural gaps.
-11. **Known Risks & Dependencies is its own standalone section?**
-    Section 8 must exist as its own top-level heading on the Knowledgebase. It cannot be folded into Current Challenges, Platform Architecture, or any other section, and it cannot live only as rows in Knowledgebase Integrity on the Knowledge Base Overview. If it is missing as a standalone section, that is a structural gap, even if risk-like content appears elsewhere. Risks that surface during an audit or update must be added here, with a cross-reference to the corresponding Knowledgebase Integrity row if one exists.
-12. **Core User Flows: every flow has an artifact link?**
-    Each flow entry must include a link to a Figma file, prototype, walkthrough, or equivalent artifact. Flows without links are a structural gap.
+Try to read the URL(s) the user provided. If any fetch fails for any reason (authentication error, permission denied, 404, MCP not connected, redirect to login, anything), invoke the "never assume" rule from the Working Principles above. Tell the user plainly:
 
-### How to classify findings
+> "I tried to open [URL] and [what happened]. I can't continue without actually reading the contents. Options: (a) make sure I'm authenticated to that Confluence space, (b) paste the page contents here, (c) give me an export. Which works for you?"
 
-- **Blocking gap.** Platform URL missing/broken. Without this, no audit can compare the KB to live product. Surface immediately, block further audit work until resolved.
-- **Structural gap.** Missing required section, missing required row, wrong column set, wrong status vocabulary, missing mandatory Recently Released table, missing Human Review Status block, missing artifact link on a Core User Flow.
-- **Content gap.** Row present but valued "TBD" or blank (except Platform URL). Not a structural gap on its own, but worth noting.
-- **Staleness note.** Human Review Status older than 6 months, Recently Released rows older than 6 months, anything the freshness check would flag. Not structural. Note it.
+Wait for the user to unblock you. Do not proceed. Do not run the audit on assumed content. Do not guess what the page contains.
 
-### Report to the user
+### Step 3: Run the STRUCTURAL check. Structure only, not content.
 
-After the audit, report findings in this shape:
+Once the KB is actually loaded, immediately run a structural check. This step is about shape, not substance. You are comparing what is present against the MB Product Knowledgebase Template, nothing more.
 
-> I've loaded [Product Name]'s Knowledge Base Overview and Knowledgebase. Here's the structural audit:
+**The canonical templates live in this skill's own `references/` folder**, byte-identical to the copies that ship with the Maker skill:
+
+- `references/cover-page-template.md` — the Knowledge Base Overview (parent page) canonical structure.
+- `references/kb-template.md` — the Knowledgebase (child page) canonical structure.
+
+Load those two files before running the structural check. Compare the user's loaded KB against them element by element. The checklist below is a concise summary of what the templates define; when in doubt, the template files are authoritative.
+
+**What counts as a structural gap (this is ALL the structural check covers):**
+
+On the Knowledge Base Overview:
+
+1. **Product Overview table**: all 15 required rows present? (Product Name(s), Product Modality, Status, Platform URL, Testing Environment URL, Point of Contact for Testing Environment Credentials, Integrated Partners, Backend or Third-Party Systems, Total Customers, Yearly Revenue / ARR, TAM, Relevant Competitors, Customer Journey Map Links, Service Blueprint Links, Core User Flows (Links).) A missing row is a structural gap. A row that exists but is "TBD" is NOT a structural gap, that is a content gap (checked later).
+2. **Team table**: all 7 required rows present? (VP, Dev Director, Dev Manager, Product Manager, Product Designers, Engineers, QA.)
+3. **Key Stakeholders table**: all 5 required roles present? (Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders.)
+4. **Knowledgebase Integrity section**: present, in the correct position (right after Team & Stakeholders), and using the correct 7 columns (Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status / Date Flagged / Target Resolution Date), with Status values from the correct set (Open / Planned / In Progress / Resolved)?
+5. **Integrations & Third Parties section**: present as a distinct section?
+6. **Product Initiatives**: **all four tables present, in this order: Current, Planned, Backlog, Recently Released?** Every one of the four tables must use the same four columns in the same order: **Initiative / Brief Description / Status / Relevant Links**. **Tables only. If initiatives are rendered as bullet lists, numbered lists, or prose paragraphs, that is a structural gap and must be converted to tables.** An initiatives section with fewer than four tables, or with a table named "In Progress" instead of "Current", or "Recently Completed" instead of "Recently Released", is a structural gap.
+7. **Discovery Backlog section**: present as a separate section (distinct from the Initiatives Backlog table)?
+
+On the Knowledgebase (child page):
+
+8. **Human Review Status block** at the top?
+9. **All 8 sections present and in order**: 1. Product Overview, 2. Platform Architecture, 3. Features & Functionality, 4. Core User Flows, 5. Current Challenges, 6. Personas, 7. Terminology & Mental Models, 8. Known Risks & Dependencies?
+10. **Known Risks & Dependencies** is its own standalone Section 8, not folded into another section?
+11. **Core User Flows**: every flow entry has an artifact link field (even if the link itself is empty; the FIELD being missing is structural, an empty VALUE is content)?
+
+**What the structural check explicitly does NOT evaluate:**
+
+- Whether Product Overview values are accurate or up to date.
+- Whether initiative descriptions match reality.
+- Whether TBDs should be filled in.
+- Whether Human Review Status is stale.
+- Whether the Platform URL actually resolves to the live product. (That check happens in Step 5, the content audit, not here.)
+- Any claim the KB makes about the product.
+
+Structure only. Shape only.
+
+### Step 4: Flag structural differences, ask if the user wants to restructure.
+
+Report findings briefly. Do not pad. Example:
+
+> "Quick structural check against the MB Product Knowledgebase Template:
 >
-> **Blocking:** [list, or "None."]
-> **Structural gaps:** [list, or "None. The KB matches the Maker's template."]
-> **Content gaps (TBDs):** [short count and examples, or "None."]
-> **Staleness:** [one-line note, or "None."]
+> **Matches template:** [short list of what's correct]
+> **Structural differences:**
+> - Product Initiatives is rendered as three bullet lists instead of four tables (Current, Planned, Backlog, Recently Released).
+> - Knowledgebase Integrity uses old 7-column layout (Item / What's Missing / etc.) instead of the current 7-column layout (Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status / Date Flagged / Target Resolution Date).
+> - The Knowledgebase child page is missing Section 8: Known Risks & Dependencies.
 >
-> [If there are any blocking or structural gaps:] Want to do a quick tidy-up before we move on to your actual task? I'll walk you through each gap one at a time. It's fine if you don't have every answer right now, we can mark what's unresolved as a Knowledgebase Integrity row and come back to it.
+> Want me to restructure the KB to match the current template first? I'll keep all your existing content intact, just move it into the right shape. Once you've pasted the restructured version into Confluence, we can run a content audit to find the real gaps."
 
-### Tidy-up flow (if the user says yes)
+If the user says **yes**: produce the restructured markdown for whichever page(s) need it. **Preserve all existing content.** Move it into the new shape only. Deliver the markdown, tell them exactly which page(s) to paste it into in Confluence, and ask them to come back with a new URL once they've pasted and saved:
 
-Work through the gaps one at a time, smallest to largest. For each gap:
+> "Paste the markdown above into your '[Product Name] Knowledge Base Overview' Confluence page (replacing the existing content). Save it. Then paste the updated Confluence URL back here so I know we're working from the restructured version before moving on."
 
-1. State the gap plainly. ("Your Team table is missing QA.")
-2. Ask one question. ("Who is QA on this product? Or should I mark this N/A?")
-3. Wait for the user's answer. If the user says they don't know, do not guess and do not skip. Offer two paths: (a) mark the gap as a Knowledgebase Integrity row with Status "Open" and move on; (b) leave the field as "TBD" and add an Integrity row flagging it.
-4. Apply the fix to the correct page.
-5. Move to the next gap.
+Wait for the new URL. Re-fetch. Confirm the structure is now aligned. Only then move to Step 5.
 
-Never batch multiple questions at once. Never auto-proceed after receiving an answer to another question. One gap, one question, one answer, one fix, then next.
+If the user says **no**: tell them plainly that the structural differences will limit what the content audit can do, log each structural gap as a row in the Knowledgebase Integrity table (Status: Open, Date Flagged: today), then proceed to Step 5.
 
-### Tidy-up flow (if the user says no)
+### Step 5: Ask if the user wants a content audit (freshness + gaps).
 
-Proceed with whatever task the user actually wanted, but for every structural gap you identified, add a row to the Knowledgebase Integrity table with:
+Once the structure is aligned, ask:
 
-- **Name:** short title of the gap ("Missing Recently Released initiatives table")
-- **Description:** what is missing or malformed
-- **Urgency or Importance:** your honest read (High / Medium / Low)
-- **Assigned To:** blank (user fills in later)
-- **Status:** Open
-- **Date Flagged:** today's date
-- **Target Resolution Date:** blank (user fills in later)
+> "Structure looks good. Want me to run a content audit now? I'll check every field for freshness, look for TBDs that should be resolved, compare KB claims against the Platform URL where possible, and surface anything that looks stale. We'll walk through gaps one at a time."
 
-Tell the user you've logged the gaps as Integrity rows so nothing is silently forgotten. Then proceed with their task.
+If **yes**: run the freshness check (see `references/freshness-check-guide.md`). Walk through findings one gap at a time. For each, ask one question; wait for one answer; apply one fix. Never batch.
 
-### What the audit does not do
+If **no**: move directly to whatever task the user actually wants (Mode 1 Query, Mode 2 Update, Mode 4 Task Context, etc.).
 
-- It does not read the Platform URL's content or compare KB claims against the live product. That is a Freshness Check (Mode 3), not a structural audit.
-- It does not validate Knowledgebase Integrity row content or chase down unresolved gaps. That is Task Context (Mode 4).
-- It does not rewrite or restructure the KB on its own. Every change the tidy-up flow applies is confirmed by the user first.
+### Step 6: Deliver updated markdown and close the loop.
+
+At the end of any session that produced changes:
+
+1. Give the user the final markdown for whichever page(s) were updated. Clearly labeled: "Paste into Knowledge Base Overview only" / "Paste into Knowledgebase only" / "Both pages updated."
+2. Tell them to paste into Confluence, overwriting the prior content, and save.
+3. Ask for the updated Confluence URL once they're done:
+
+   > "Once you've pasted and saved, give me the Confluence URL(s) again. That way we're both sure we're working from the latest version next time."
+
+4. Confirm the new URL fetches cleanly before you end the session. Never end a session claiming changes are "applied" if the user hasn't confirmed the Confluence paste happened.
+
+### Handling Previous Sessions
+
+Do not rely on memory of "the KB was at URL X last time." URLs rot, Confluence pages move, permissions change. Always ask for the URL again at the start of every new session, and always re-fetch. The only exception: within a single session, after the user has provided a URL and you've successfully fetched it, you don't need to re-ask unless they say the page has moved.
+
+## Ongoing Integrity Scanning (Runs Continuously)
+
+The Knowledgebase Integrity table is not something the user hand-curates. It is populated and maintained automatically by this Assistant, continuously, across every session and every mode. Treat it as the skill's responsibility, not the user's.
+
+### When to scan
+
+Every time you read, produce, or edit any part of the KB (during loading, during a query, during an update, during a content audit, during task context work), scan what you just touched for any of the following:
+
+- **Assumptions** ("presumably", "likely", "roughly", "about", "seems to be", "we think").
+- **Data without sources** (numbers, percentages, customer counts, revenue figures, TAM estimates without a named source).
+- **Unvalidated claims** (statements that sound factual but have no supporting citation or methodology).
+- **Vague descriptions** ("many users", "a lot of customers", "recently", "a while ago").
+- **TBD values** that have never been followed up on.
+- **Stale dates** (e.g., "last verified 2024-06-15" on a Core User Flow that touches live product).
+- **Orphan artifacts** (references to Figma files, Pendo reports, or docs that no longer resolve).
+- **Competitive claims** without a competitive audit source.
+- **Persona claims** without user research or interview source.
+
+### How to log a finding
+
+For every new finding, add a row to Knowledgebase Integrity with all nine columns filled:
+
+1. **Name** — short, descriptive title (e.g., "90/10 invite-to-manual split assumption").
+2. **Where Mentioned** — exact KB location (e.g., "KB Overview > Product Overview > Main Personas" or "Knowledgebase Section 4 > Flow 1 > Steps, step 3").
+3. **Description** — what is unvalidated, plus the concrete action to validate it. Not "check analytics" but "Pull Pendo report: Orders > Order Type = Invite vs Manual > last 90 days."
+4. **Importance** — Critical / High / Medium / Low, with a one-line reason grounded in what decisions depend on it.
+5. **Typical Data Source** — pick from the standard vocabulary: Pendo / Customer Success (CSM) / Relationship Manager / Stakeholder Interview / User Research / Sales / RevOps / Compliance / Legal / DevOps Ticket / Competitive Audit / Finance / Ministry Brands Corporate / Other (specify). If unsure which, pick the closest and note "TBD confirm source" in the Description.
+6. **Assigned To** — a specific person or role (PM name, CSM name, "Relationship Manager for [host system]"). Never "TBD" or "someone".
+7. **Status** — Open (default for new rows).
+8. **Date Flagged** — today's date (YYYY-MM-DD).
+9. **Target Resolution Date** — propose a reasonable target based on Importance (Critical: this week; High: this month; Medium: this quarter; Low: next cleanup). The user can adjust.
+
+Before adding a new row, check whether an equivalent row already exists to avoid duplicates. If a similar row exists, update its Description or Where Mentioned to reflect the additional location, rather than adding a duplicate.
+
+### When to surface findings to the user
+
+Do not interrupt the user's flow with every finding. Batch them and surface at natural breakpoints:
+
+- At the end of the initial structural check (report new Integrity rows alongside the structural summary).
+- At the end of any content audit or freshness check.
+- At the end of any Update session ("While I was updating the Knowledgebase, I noticed three new unvalidated claims and added them to Knowledgebase Integrity. Here they are in short...").
+- Before ending any session that produced changes.
+
+Never silently populate and then hide the additions. The user must be told what was added and why.
+
+### Resolving rows
+
+If, during a session, the user provides information that resolves an Open row (e.g., "the 90/10 split is confirmed, here's the Pendo screenshot"), update that row's Status to "Resolved" and add a brief source/date note to the Description. Do not delete resolved rows during the session; they can be pruned on the next freshness cleanup pass.
 
 ## Understanding What the User Wants
 
@@ -228,7 +294,7 @@ Walk the user through:
 4. Show the proposed edits.
 5. Apply the changes to the correct markdown document.
 6. If the change resolves a Knowledgebase Integrity row, update its Status to "Resolved" and add a brief source/date note.
-7. If the change introduces a new unvalidated claim, add a new Knowledgebase Integrity row with all seven columns (Name / Description / Urgency or Importance / Assigned To / Status="Open" / Date Flagged / Target Resolution Date).
+7. If the change introduces a new unvalidated claim, add a new Knowledgebase Integrity row with all nine columns (Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status="Open" / Date Flagged / Target Resolution Date).
 8. Tell the user exactly which page they need to re-paste into Confluence: "I updated the Knowledge Base Overview only", "I updated the Knowledgebase only", or "I updated both".
 
 ### Mode 3: Freshness Check
@@ -245,7 +311,7 @@ This is the highest-value mode. The user is about to prototype, write a PRD, eva
 
 1. Ask what they're working on. Get specifics.
 2. Identify which Knowledge Base Overview and Knowledgebase sections are most relevant to the task.
-3. **Walk the Knowledgebase Integrity table against the task.** Do not just dump the full table. Search it for rows whose Name, Description, or Urgency or Importance touches the task the user is about to do.
+3. **Walk the Knowledgebase Integrity table against the task.** Do not just dump the full table. Search it for rows whose Name, Description, or Importance touches the task the user is about to do.
    - Example: user says "I'm prototyping a new manual-entry variant of the order flow." Walk the Knowledgebase Integrity table and flag rows that touch the manual flow, the invite-vs-manual split, manual flow usage percentages, or related assumptions. If the KB says "90% of users are on invite, 10% on manual" and that's flagged as unvalidated in Knowledgebase Integrity, that specifically matters for this prototype: the prototype is targeting the 10%, so the assumption about the split may or may not hold, and the user should know before investing.
 4. Offer to run a targeted freshness check on just those sections before the user starts.
 5. Then help with the task, grounding every recommendation in what the KB actually says and what is flagged as unreliable.
@@ -261,7 +327,7 @@ When the user asks anything in this shape, do the following:
 1. Load the Knowledge Base Overview Knowledgebase Integrity table.
 2. Group the rows by Status: Open / Planned / In Progress / Resolved.
 3. Summarize: "There are [N] open items in Knowledgebase Integrity. [N] are Open, [N] Planned, [N] In Progress. [N] are already Resolved (those are safe to clean up on the next cleanup pass). Here's the list, grouped by Status..."
-4. For each unresolved row (Open, Planned, In Progress), surface: Name, Description, Urgency or Importance, Assigned To, Date Flagged, Target Resolution Date.
+4. For each unresolved row (Open, Planned, In Progress), surface: Name, Description, Importance, Assigned To, Date Flagged, Target Resolution Date.
 5. **Ask the user directly:** "Have any of these been resolved since the KB was last updated? If so, tell me which and what the answer was and I'll move them to Resolved and update the document. Or, want to pick one to resolve together now and I'll walk you through the validation steps from the Description?"
 6. Offer a "plan mode": for any row the user picks, produce a concrete validation plan using the Description plus the MB Tool Stack (Pendo, Power BI, HeyMarvin, DevOps Tickets, or interview guide).
 
@@ -295,10 +361,12 @@ Start with checks you can make just by reading the Knowledge Base Overview:
 - Core User Flows, Customer Journey Maps, Service Blueprints, Pendo Dashboard, Figma. Do the links resolve?
 - For any "TBD, not yet created" entries, ask if those should become Knowledgebase Integrity rows.
 
-**Product Initiatives (three tables)**
+**Product Initiatives (four tables: Current, Planned, Backlog, Recently Released)**
 
-- Are items in "In Progress" actually in progress? Any that have shipped and should move to Recently Released?
+- All four tables rendered as tables with Initiative / Brief Description / Status / Relevant Links columns? Never bullets or prose.
+- Are items in "Current" actually in progress? Any that have shipped and should move to Recently Released?
 - Are items in "Planned" still planned, or have priorities shifted?
+- Are items in "Backlog" still relevant, or should they be dropped?
 - Does Recently Released have items older than ~6 months that should be pruned?
 - Do all items have valid Status values from their table's allowed list?
 
@@ -309,7 +377,7 @@ Start with checks you can make just by reading the Knowledge Base Overview:
 
 **Knowledgebase Integrity**
 
-- Every row has all seven columns filled in (Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date).
+- Every row has all nine columns filled in (Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status / Date Flagged / Target Resolution Date).
 - The "Description" column contains a concrete action, not a method label. "Pull Pendo report filtering by [feature] over 90 days" is concrete. "Check analytics" is not.
 - "Assigned To" names a specific person or role, not "TBD" or "someone".
 - "Target Resolution Date" has a date or cadence.
@@ -361,7 +429,7 @@ For each confirmed change:
 1. Show current text and proposed update.
 2. Get user confirmation.
 3. Apply to the correct page (Knowledge Base Overview or Knowledgebase, not both unless the content truly spans both).
-4. Update Knowledgebase Integrity: mark resolved rows "Resolved", add new rows with Status "Open" and all columns filled in (Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date).
+4. Update Knowledgebase Integrity: mark resolved rows "Resolved", add new rows with Status "Open" and all columns filled in (Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status / Date Flagged / Target Resolution Date).
 5. If Section 4 flows were updated, note which flow HTML / Figma artifacts need regeneration.
 
 Give the user the updated markdown files clearly labeled:

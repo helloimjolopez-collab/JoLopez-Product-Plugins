@@ -24,6 +24,7 @@ These rules persist across every session, every project, every chat, every Cowor
 3. **No flourish, filler, or padding.** Write plainly. Skip dramatic openers and throat-clearing.
 4. **Never assume, never fabricate. Resolve access first.** If the user provides a URL, a Confluence link, a file path, an uploaded document, or any pointer to information needed for the task, and you cannot actually fetch, read, or access it for any reason (authentication error, 404, permission denied, MCP not connected, file missing, paste truncated, anything else), STOP. Do not continue the task. Tell the user plainly what you tried, what went wrong, and what you need from them to resolve it. For example: "I tried to open the Confluence URL you gave me and got a permission error. Can you confirm I'm authenticated for that space, or paste the page contents here so I can work from that?" Never proceed by guessing or describing what the document probably contains. Never produce output that claims to be grounded in a source you could not actually read. The one and only exception: the user explicitly tells you to speculate, imagine, or assume for the current step. Absent that explicit permission, resolution of access comes first, every time.
 5. **Plain, user-friendly language throughout.** The people who use this skill are product designers, product managers, and similar roles, not developers. Avoid developer-speak ("run this command", "cd into the directory", "cat the file"). Explain any action in terms of what to click, type, or paste, in the interface they are actually in.
+6. **Templates are canonical. Never remove, only add or populate.** The two template files (`references/cover-page-template.md` for the Knowledge Base Overview, and `references/kb-template.md` for the Knowledgebase) are the single source of truth for structure. When generating a new KB, following these templates exactly is mandatory. When updating an existing KB, you may add sections, rows, columns, or tables that a future template adds, and you may populate empty fields, but you must never delete or collapse a section, subsection, heading, row, column, or table that the template defines, even if it is unpopulated. Missing data stays as "TBD" or "N/A" or a placeholder row. The templates may grow over time; the Maker and Assistant skills track that growth by adding, never by pruning.
 
 ## Where Information Lives
 
@@ -34,7 +35,7 @@ The Knowledge Base Overview is the one-page dashboard. It holds:
 - **Key Stakeholders** (5 required roles, always present: Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders)
 - **Knowledgebase Integrity** (prominent trust layer right after Team & Stakeholders; every unvalidated claim, flagged gap, or maintenance to-do with Name, Description, Urgency/Importance, Assigned To, Status, Date Flagged, Target Resolution Date)
 - Integrations & Third Parties (detailed breakdown of host integrations, product integrations, backend systems)
-- Product Initiatives (three tables: In Progress, Planned, Recently Released)
+- Product Initiatives (four tables: Current, Planned, Backlog, Recently Released; every table uses columns Initiative / Brief Description / Status / Relevant Links; never render as bullet lists)
 - Discovery Backlog (one table with a status column)
 
 The Knowledgebase is the deep reference. It holds:
@@ -153,10 +154,14 @@ Work through these categories in order. Read `references/question-bank.md` for t
 
 **10. Product Initiatives**
 
-- **In Progress** initiatives (with status: In Design, Refining, Implementing, QA, Commercializing, Releasing)
-- **Planned** initiatives (with status: Discovering, Validating, Awaiting Approval)
-- **Recently Released** (shipped in last ~6 months)
-- For each: short description and linked docs (PRD, PIO, brief)
+Render as **four separate tables** on the Knowledge Base Overview, in this order: Current, Planned, Backlog, Recently Released. Every table uses the same four columns: Initiative, Brief Description, Status, Relevant Links. **Never render initiatives as bullet lists, numbered lists, or prose.** Tables only.
+
+- **Current** initiatives (Status values: In Design, Refining, Implementing, QA, Commercializing, Releasing)
+- **Planned** initiatives (Status values: Discovering, Validating, Awaiting Approval)
+- **Backlog** initiatives (Status values: Identified, Scoped, On Hold, Deprioritized)
+- **Recently Released** (shipped in last ~6 months; Status column holds the release Month/Year)
+
+All four tables are mandatory on the output, even if a table is empty. For an empty table, include a single placeholder row ("None currently" / "None in the last ~6 months") rather than omitting the table.
 
 **11. Discovery Backlog**
 
@@ -231,9 +236,9 @@ This is the parent Confluence page, named "[Product Name] Knowledge Base Overvie
 2. **Team & Stakeholders** (two sub-tables):
    - **Team** (7 required rows: VP, Dev Director, Dev Manager, Product Manager, Product Designers, Engineers, QA)
    - **Key Stakeholders** (5 required roles: Customer Success, Relationship Manager, Sales Lead, Compliance, Relevant Partner Stakeholders)
-3. **Knowledgebase Integrity** (prominent, right after Team & Stakeholders; one table with Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date. Status values: Open, Planned, In Progress, Resolved.)
+3. **Knowledgebase Integrity** (prominent, right after Team & Stakeholders; one table with Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status / Date Flagged / Target Resolution Date. Status values: Open, Planned, In Progress, Resolved.)
 4. **Integrations & Third Parties** (host integrations, product integrations, backend systems)
-5. **Product Initiatives** (three tables: In Progress, Planned, Recently Released, each with Name / Short Description / Linked Docs / Status)
+5. **Product Initiatives** (four tables: Current, Planned, Backlog, Recently Released; every table uses the same four columns in the same order: Initiative / Brief Description / Status / Relevant Links. Always tables, never bullet lists.)
 6. **Discovery Backlog** (one table with Name / Short Description / Linked Docs / Status)
 
 Save as `[Product Name] Knowledge Base Overview.md`. This is what gets pasted into the parent Confluence page.
@@ -283,7 +288,7 @@ Where the Knowledgebase contains an unvalidated claim, add an inline flag:
 
 > **Needs Validation** - [brief note on what needs checking]
 
-Every inline flag must have a corresponding row in the Knowledge Base Overview Knowledgebase Integrity table with all columns filled (Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date).
+Every inline flag must have a corresponding row in the Knowledge Base Overview Knowledgebase Integrity table with all columns filled (Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status / Date Flagged / Target Resolution Date).
 
 Do not over-flag. Focus on claims that would change decisions if wrong.
 
@@ -310,7 +315,7 @@ After generating the documents, present the user with the complete Knowledgebase
 
 ### Presenting the Table
 
-> "Here's the Knowledgebase Integrity table. Every unvalidated claim, rough estimate, missing artifact, and data gap from our conversation lives here, each with a Name, Description, Urgency or Importance, a proposed Assigned To, a Date Flagged, a Target Resolution Date, and a starting Status of 'Open'. This is completely normal. No product owner has hard data for everything. The documents are solid as working references. Would you like to walk through these rows together and confirm owners and dates, or resolve any of them now?"
+> "Here's the Knowledgebase Integrity table. Every unvalidated claim, rough estimate, missing artifact, and data gap from our conversation lives here, each with a Name, Description, Importance, a proposed Assigned To, a Date Flagged, a Target Resolution Date, and a starting Status of 'Open'. This is completely normal. No product owner has hard data for everything. The documents are solid as working references. Would you like to walk through these rows together and confirm owners and dates, or resolve any of them now?"
 
 ### If They Want Validation Guidance
 
@@ -338,7 +343,7 @@ When writing validation guidance, always reference the specific tool. Do not say
 
 ### The Knowledgebase Integrity Table in the Document
 
-The Knowledgebase Integrity table lives on the Knowledge Base Overview, positioned prominently right after the Team & Stakeholders section so anyone consulting the KB (human or machine) sees gaps and assumptions before relying on it. Its columns are: Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date. Every row must have all columns filled in. Status values: Open / Planned / In Progress / Resolved.
+The Knowledgebase Integrity table lives on the Knowledge Base Overview, positioned prominently right after the Team & Stakeholders section so anyone consulting the KB (human or machine) sees gaps and assumptions before relying on it. Its columns are: Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status / Date Flagged / Target Resolution Date. Every row must have all columns filled in. Status values: Open / Planned / In Progress / Resolved.
 
 ---
 

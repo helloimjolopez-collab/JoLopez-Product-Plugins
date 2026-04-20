@@ -66,27 +66,38 @@ For every row in each of the three sub-tables (Host System, Product Integrations
 - [ ] Any new integrations added?
 - [ ] Any removed, replaced, or vendor changes?
 
-### Product Initiatives (three tables)
+### Product Initiatives (four tables: Current, Planned, Backlog, Recently Released)
 
-**In Progress table:**
+All four tables must be rendered as tables with columns Initiative / Brief Description / Status / Relevant Links. Never bullets. Never prose.
+
+**Current table:**
 
 - [ ] Each row still actively being built?
 - [ ] Status value is one of: In Design, Refining, Implementing, QA, Commercializing, Releasing. Any invalid?
 - [ ] Any items here have actually shipped? (If yes, move to Recently Released.)
-- [ ] Any items have stalled? (Update status or move to a different table.)
-- [ ] All linked docs still resolve?
+- [ ] Any items have stalled? (Update status or move to Backlog.)
+- [ ] All Relevant Links still resolve?
 
 **Planned table:**
 
 - [ ] Each row still planned, or has priority shifted?
 - [ ] Status value is one of: Discovering, Validating, Awaiting Approval. Any invalid?
-- [ ] Any items should now be in In Progress?
-- [ ] All linked docs still resolve?
+- [ ] Any items should now be in Current?
+- [ ] Any items dropped that should move to Backlog?
+- [ ] All Relevant Links still resolve?
+
+**Backlog table:**
+
+- [ ] Each row still a known future initiative, or has it been deprioritized entirely?
+- [ ] Status value is one of: Identified, Scoped, On Hold, Deprioritized. Any invalid?
+- [ ] Any items ready to move up to Planned?
+- [ ] All Relevant Links still resolve?
 
 **Recently Released table:**
 
 - [ ] Any items older than ~6 months that should be pruned?
-- [ ] Released dates accurate?
+- [ ] Released Month/Year accurate and present as the Status value?
+- [ ] All Relevant Links still resolve?
 
 ### Discovery Backlog
 
@@ -99,11 +110,11 @@ For every row in each of the three sub-tables (Host System, Product Integrations
 
 This is the trust layer. It must be tight.
 
-- [ ] **Every row has all seven columns populated: Name, Description, Urgency or Importance, Assigned To, Status, Date Flagged, Target Resolution Date.** Rows missing any column are incomplete. Fill them in during the audit.
+- [ ] **Every row has all nine columns populated: Name, Description, Importance, Assigned To, Status, Date Flagged, Target Resolution Date.** Rows missing any column are incomplete. Fill them in during the audit.
 - [ ] **"Description" contains a concrete action, not a method label.** "Pull Pendo report filtering by [feature] over 90 days" is concrete. "Check analytics" is not.
 - [ ] **"Assigned To" names a specific person or role**, not "TBD" or "someone".
 - [ ] **"Target Resolution Date" has a date or cadence**, not blank.
-- [ ] **"Urgency or Importance" is one of**: Critical, High, Medium, Low (with a one-line reason).
+- [ ] **"Importance" is one of**: Critical, High, Medium, Low (with a one-line reason).
 - [ ] **Status is one of**: Open, Planned, In Progress, Resolved. Any invalid values?
 - [ ] Any rows with Status "In Progress" that have stalled? Update or reassign.
 - [ ] Any rows marked "Resolved" that can be cleaned up on this pass?
@@ -223,7 +234,7 @@ For each confirmed change:
 1. Show current text and proposed update.
 2. Get user confirmation.
 3. Apply to the correct page. Remember: most content lives in exactly one place. Team and Platform URL are the exceptions that touch both the Knowledge Base Overview Product Overview and are referenced from context sections in the Knowledgebase.
-4. Update the Knowledgebase Integrity table: mark resolved rows "Resolved", add new rows with all seven columns filled in (Name / Description / Urgency or Importance / Assigned To / Status="Open" / Date Flagged / Target Resolution Date).
+4. Update the Knowledgebase Integrity table: mark resolved rows "Resolved", add new rows with all nine columns filled in (Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status="Open" / Date Flagged / Target Resolution Date).
 5. If Section 4 flows were updated, note which HTML / Figma / Lucid artifacts need regeneration and surface that to the user.
 
 Give the user both markdown files clearly labeled:

@@ -118,27 +118,33 @@ Flag every unvalidated claim internally. Don't announce each flag - just keep th
 48. Are there internal team frustrations - things that slow you down or cause friction?
 49. Are there architectural constraints that limit what you can build or how fast you can ship?
 
-## 9. Product Initiatives (In Progress, Planned, Recently Released)
+## 9. Product Initiatives (Current, Planned, Backlog, Recently Released)
 
-All three tables live on the Knowledge Base Overview. Each initiative lives in exactly one based on its current state. Capture name, short description, linked docs (PRD, PIO, brief), and a status value from the allowed list for its table.
+All four tables live on the Knowledge Base Overview, always rendered as tables (never bullet lists, never prose). Every table uses the same four columns in the same order: Initiative, Brief Description, Status, Relevant Links. Each initiative lives in exactly one table based on its current lifecycle state.
 
-50. **In Progress.** What initiatives are actively being built right now? For each, capture:
-    - Name
-    - One-line description of what it is and what problem it solves
-    - Linked docs (PRD, PIO, brief, wiki page)
+50. **Current.** What initiatives are actively being built right now? For each, capture:
+    - Initiative (name)
+    - Brief description: one line, what it is and what problem it solves
     - Status (pick one): **In Design**, **Refining**, **Implementing**, **QA**, **Commercializing**, **Releasing**
+    - Relevant Links: PRD, PIO, brief, wiki page
 
 51. **Planned.** What initiatives are committed but have not started yet? For each, capture:
-    - Name
-    - One-line description
-    - Linked docs
+    - Initiative (name)
+    - Brief description
     - Status (pick one): **Discovering**, **Validating**, **Awaiting Approval**
+    - Relevant Links: PRD, PIO, brief
 
-52. **Recently Released.** What has shipped in the last ~6 months? For each, capture:
-    - Name
-    - One-line description
-    - Linked docs (PRD, PIO, retro if any)
-    - Released month/year (e.g., "Feb 2026")
+52. **Backlog.** What initiatives are identified but not yet planned for a specific timeframe? These are different from Discovery Backlog items (which are still problems/questions needing discovery). For each, capture:
+    - Initiative (name)
+    - Brief description
+    - Status (pick one): **Identified**, **Scoped**, **On Hold**, **Deprioritized**
+    - Relevant Links: scoping doc, notes, or "None yet"
+
+53. **Recently Released.** What has shipped in the last ~6 months? For each, capture:
+    - Initiative (name)
+    - Brief description
+    - Status: the release Month/Year (e.g., "Feb 2026")
+    - Relevant Links: PRD, PIO, retro if any
 
 ## 10. Discovery Backlog
 

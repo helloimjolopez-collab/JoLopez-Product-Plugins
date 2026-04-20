@@ -51,7 +51,7 @@ Read both pages of the KB: the **Knowledge Base Overview** (parent page, named "
 - **Terminology that hints at user segments** - Knowledgebase Section 7 (Terminology & Mental Models).
 - **Team and Stakeholders** - Knowledge Base Overview Product Overview and Knowledge Base Overview Key Stakeholders sub-table (useful for knowing who to interview during persona validation). There is no dedicated Team section in the Knowledgebase anymore.
 - **Known Risks & Dependencies** - Knowledgebase Section 8 (some may be persona-specific pain points, e.g., compliance burden falling on specific personas, vendor concentration affecting specific user types).
-- **Open Validation items** - Knowledge Base Overview **Knowledgebase Integrity** table (columns: Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date). Many rows will already be persona-related. Note which ones are "Open" vs "Planned" vs "In Progress" vs "Resolved" so you know what context is trustworthy.
+- **Open Validation items** - Knowledge Base Overview **Knowledgebase Integrity** table (columns: Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status / Date Flagged / Target Resolution Date). Many rows will already be persona-related. Note which ones are "Open" vs "Planned" vs "In Progress" vs "Resolved" so you know what context is trustworthy.
 - **Business Context** - Knowledge Base Overview Business Context table (customer count, revenue, pricing, competitors, TAM). Useful for sizing persona segments.
 - **Integrations** - Knowledge Base Overview Integrations & Third Parties (host systems, product integrations, backend vendors). Useful for understanding which personas touch which integration points.
 - **Human Review Status** - Knowledgebase top block. If "Fully reviewed" is No or review is stale, treat the Knowledgebase content as draft and flag it to the user before building personas on top of it.
@@ -237,9 +237,9 @@ If the user has not yet created a product KB, tell them:
 
 ### Persona-Specific Knowledgebase Integrity Rows
 
-For every gap the persona gap analysis surfaced (Phase 3), the corresponding Knowledgebase Integrity row on the Knowledge Base Overview should use the full seven-column format:
+For every gap the persona gap analysis surfaced (Phase 3), the corresponding Knowledgebase Integrity row on the Knowledge Base Overview should use the full nine-column format:
 
-**Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date**
+**Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status / Date Flagged / Target Resolution Date**
 
 Tag the Name to show it originated here (e.g., "Persona: Sarah, assumed tech comfort 3/5"). Set Status to "Open" for new rows.
 
@@ -247,7 +247,7 @@ This keeps the Knowledge Base Overview Knowledgebase Integrity table as the sing
 
 If no KB exists yet, note in the Data Validation Guide output that these items should be migrated into a Knowledge Base Overview Knowledgebase Integrity table once the KB is created.
 
-When merging, use the KB's column structure: **Name / Description / Urgency or Importance / Assigned To / Status / Date Flagged / Target Resolution Date**. Add a tag or note on each merged row to indicate the item originated from persona work (e.g., "Source: Persona Maker - [Persona Name]"). This keeps the KB as the single source of truth for open validation items and prevents drift between a standalone persona validation guide and the KB's registry.
+When merging, use the KB's column structure: **Name / Where Mentioned / Description / Importance / Typical Data Source / Assigned To / Status / Date Flagged / Target Resolution Date**. Add a tag or note on each merged row to indicate the item originated from persona work (e.g., "Source: Persona Maker - [Persona Name]"). This keeps the KB as the single source of truth for open validation items and prevents drift between a standalone persona validation guide and the KB's registry.
 
 If no KB exists yet, note in the Data Validation Guide output that these items should be merged into a KB Validation Registry if one is later created for this product.
 
@@ -277,3 +277,4 @@ These rules persist across every session, every project, every chat, every Cowor
 4. **Never assume, never fabricate. Resolve access first.** If the user provides a URL, a Confluence link, a file path, an uploaded document, a knowledgebase, a persona doc, or any pointer to information needed for the task, and you cannot actually fetch, read, or access it for any reason (authentication error, 404, permission denied, MCP not connected, file missing, paste truncated, anything else), STOP. Do not continue the task. Tell the user plainly what you tried, what went wrong, and what you need from them to resolve it. For example: "I tried to open the Confluence URL you gave me and got a permission error. Can you confirm I'm authenticated for that space, or paste the page contents here so I can work from that?" Never proceed by guessing or describing what the document probably contains. Never produce output that claims to be grounded in a source you could not actually read. The one and only exception: the user explicitly tells you to speculate, imagine, or assume for the current step. Absent that explicit permission, resolution of access comes first, every time.
 5. **Plain, user-friendly language throughout.** The people who use this skill are product designers, product managers, researchers, and similar roles, not developers. Avoid developer-speak ("run this command", "cd into the directory", "cat the file"). Explain any action in terms of what to click, type, or paste, in the interface they are actually in.
 6. **These rules also apply to all generated documents** including persona documents, validation guides, interview guides, and any other output this skill produces.
+7. **Templates are canonical. Never remove, only add or populate.** When this skill merges persona output into an existing product Knowledge Base Overview or Knowledgebase (via the Knowledgebase Assistant), it must respect the canonical MB Product Knowledgebase templates (`cover-page-template.md` and `kb-template.md` in the Knowledgebase Maker and Assistant skills). Never delete sections, rows, or tables from a user's existing KB, even if unpopulated. Only add personas and persona-related data to the slots the templates already define (Main Personas row on the Knowledge Base Overview, Section 6 on the Knowledgebase), plus Knowledgebase Integrity rows for any persona-specific gaps.
